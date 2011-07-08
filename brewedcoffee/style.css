@@ -67,9 +67,9 @@ hr {
 
 #header {
 	width: 900px;
-	height: 400px;
+	height: 300px;
 	margin: 0 auto;
-	background: url(images/img04.jpg) no-repeat left top;
+	background: url(images/desks_all.jpg) no-repeat left top;
 }
 
 #header h1, #header p {
@@ -106,7 +106,7 @@ hr {
 #content {
 	float: right;
 	width: 700px;
-	margin-top: -100px;
+	margin-top: -16px;
 	margin-bottom: 30px;
 	padding: 30px 20px;
 	background: #EBEBEB;

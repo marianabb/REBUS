@@ -1,7 +1,15 @@
-Sat july 2nd 8pm - 9pm
-- Looking for templates
+Sat july 2nd
+- Looking for templates 1hr
 
 Thu july 7th
-- Setting up environment 11:30 - 12:30
-- Deciding on template 16:00 - 16:30
-- Initial template modifications 21:00 - 22:30
+- Setting up environment 1hr
+- Deciding on template 0.5hr
+- Initial template modifications 1.5hr
+
+
+Thu july 14th
+- Setting up Django project 11:46am - 12:17am
+- Creating model for educational resources 12:17 - 1:00pm, 5:40 -
+
+
+pwd: BSArebus

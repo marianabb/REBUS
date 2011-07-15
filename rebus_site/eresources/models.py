@@ -9,15 +9,21 @@ class Lecturer(models.Model):
     work_address = models.TextField(blank=True, null=True)
     city = models.CharField(max_length=15)
     country = models.CharField(max_length=15)
+    
+    def __unicode__(self):
+        return self.first_name+' '+self.last_name
 
 class School(models.Model):
     school_name = models.CharField(max_length=100)
-    school_url = models.URLField(verify_exists=False, blank=True, null=True)
-    school_email = models.EmailField()
-    school_phone = models.CharField(max_length=20)
+    school_url = models.URLField(verify_exists=False)
+    school_email = models.EmailField(blank=True, null=True)
+    school_phone = models.CharField(max_length=20, blank=True, null=True)
     school_address = models.TextField(blank=True, null=True)
     city = models.CharField(max_length=15)
     country = models.CharField(max_length=15)
+    
+    def __unicode__(self):
+        return self.school_name
 
 class Course(models.Model):
     course_name = models.CharField(max_length=100)
@@ -30,10 +36,14 @@ class Course(models.Model):
         (u'ad', u'Advanced')
         )
     level = models.CharField(max_length=2, choices=LEVEL_CHOICES)
+
+    # Every school can have many courses
     school = models.ForeignKey(School)
+    # Every lecturer can have many courses
     lecturer = models.ForeignKey(Lecturer)
 
-
+    def __unicode__(self):
+        return self.course_name
 
     
 

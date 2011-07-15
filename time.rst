@@ -8,8 +8,12 @@ Thu july 7th
 
 
 Thu july 14th
-- Setting up Django project 11:46am - 12:17am
-- Creating model for educational resources 12:17 - 1:00pm, 5:40 -
+- Setting up Django project 0.5hr
+- Creating model for educational resources 1.75hr
+
+Fri july 15th
+- Continue model creation + testing 0.75hr
+- Admin mode 0.75hr
 
 
 pwd: BSArebus

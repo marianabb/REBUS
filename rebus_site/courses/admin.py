@@ -9,8 +9,14 @@ class CourseAdmin(admin.ModelAdmin):
 admin.site.register(Course, CourseAdmin)
 
 
+# Add 3 courses inline when creating a new School
+class CourseInline(admin.StackedInline):
+    model = Course
+    extra = 3
+
 class SchoolAdmin(admin.ModelAdmin):
     list_display = ('school_name', 'school_url', 'city', 'country')
+    inlines = [CourseInline]
 
 admin.site.register(School, SchoolAdmin)
 

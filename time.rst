@@ -22,9 +22,16 @@ Sat july 16th
 - Losing fight with PIL 1hr
 
 Mon july 18th
-- Organizing project according to new menu 6:00pm - 
+- Organizing project into 3 apps: Courses, Resources, Eventmgr 1hr
+- Update to the admin (3 courses per school) 0.25hr
+- Initial home view + static files 1.5hr
 
 
+
+======
+ TODO:
+======
+- Check https://docs.djangoproject.com/en/dev/howto/static-files/ to manage static files at deplyment phase.
 
 
 

@@ -1,6 +1,6 @@
-from eresources.models import Course
-from eresources.models import School
-from eresources.models import Lecturer
+from courses.models import Course
+from courses.models import School
+from courses.models import Lecturer
 from django.contrib import admin
 
 class CourseAdmin(admin.ModelAdmin):

@@ -14,6 +14,19 @@ Thu july 14th
 Fri july 15th
 - Continue model creation + testing 0.75hr
 - Admin mode 0.75hr
+- Meeting + Writing conclusions and new stuff to do 1.25hr
+
+Sat july 16th 
+- Thinking about user registration 0.25hr
+- Updating model according to meeting (events, eresources, rresources, useful links, ..) 0.75hr
+- Losing fight with PIL 1hr
+
+Mon july 18th
+- Organizing project according to new menu 6:00pm - 
+
+
+
 
 
 pwd: BSArebus
+

@@ -9,6 +9,7 @@ class Lecturer(models.Model):
     work_address = models.TextField(blank=True, null=True)
     city = models.CharField(max_length=15)
     country = models.CharField(max_length=15)
+    #image = models.FileField(upload_to="media", blank=True, null=True) TODO
     
     def __unicode__(self):
         return self.first_name+' '+self.last_name
@@ -33,9 +34,16 @@ class Course(models.Model):
     LEVEL_CHOICES = (
         (u'bg', u'Beginner'),
         (u'im', u'Intermediate'),
-        (u'ad', u'Advanced')
+        (u'ad', u'Advanced'),
+        (u'ph', u'Phd')
         )
     level = models.CharField(max_length=2, choices=LEVEL_CHOICES)
+    TYPE_CHOICES = (
+        (u'ca', u'Campus'),
+        (u'on', u'Online'),
+        (u'bl', u'Blended')
+        )
+    type = models.CharField(max_length=2, choices=TYPE_CHOICES)
 
     # Every school can have many courses
     school = models.ForeignKey(School)
@@ -44,9 +52,4 @@ class Course(models.Model):
 
     def __unicode__(self):
         return self.course_name
-
-    
-
-
-
 

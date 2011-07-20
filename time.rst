@@ -26,12 +26,38 @@ Mon july 18th
 - Update to the admin (3 courses per school) 0.25hr
 - Initial home view + static files 1.5hr
 
+Tue july 19th
+- Reading + investigating about DataTables 0.25hr
+- Adding JQuery and DataTables plugin to the project 0.5hr
+
+Wed july 20th
+- Initial Table of courses 1.5hr
+- Testing table 0.25hr
+- Status email 0.25hr
+- Educational resources table 0.5hr
+- Reading about file management to handle book pictures + actually doing it + menu order change 0.75hr
+
+
+
+
+
+- Create a view to list research resources 
+- Create a view to list useful links
+
+
+
+- Add educational resource
+- Add research resource
+- Add Useful link
+
+- User registration
+- Manage user profiles
 
 
 ======
  TODO:
 ======
-- Check https://docs.djangoproject.com/en/dev/howto/static-files/ to manage static files at deplyment phase.
+- Check https://docs.djangoproject.com/en/dev/howto/static-files/ to manage static files at deployment phase.
 
 
 

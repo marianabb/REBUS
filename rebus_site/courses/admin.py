@@ -4,7 +4,7 @@ from courses.models import Lecturer
 from django.contrib import admin
 
 class CourseAdmin(admin.ModelAdmin):
-    list_display = ('course_name', 'school', 'lecturer', 'level', 'language')
+    list_display = ('name', 'school', 'lecturer', 'level', 'language')
 
 admin.site.register(Course, CourseAdmin)
 
@@ -15,7 +15,7 @@ class CourseInline(admin.StackedInline):
     extra = 3
 
 class SchoolAdmin(admin.ModelAdmin):
-    list_display = ('school_name', 'school_url', 'city', 'country')
+    list_display = ('name', 'url', 'city', 'country')
     inlines = [CourseInline]
 
 admin.site.register(School, SchoolAdmin)

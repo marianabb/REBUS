@@ -4,11 +4,11 @@ from django.db import models
 class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
-    picture = models.FileField(upload_to="media", blank=True, null=True) # TODO details
+    picture = models.FileField(upload_to="books", blank=True, null=True) # TODO change to image
     link = models.URLField(verify_exists=False, blank=True, null=True)
 
     def __unicode__(self):
-        return self.book_title
+        return self.title
     
     
 class ExerciseMaterial(models.Model):
@@ -24,7 +24,7 @@ class ExerciseMaterial(models.Model):
     type = models.CharField(max_length=2, choices=TYPE_CHOICES)
 
     def __unicode__(self):
-        return self.ex_title
+        return self.title
 
 
 ## Research Resources
@@ -35,7 +35,7 @@ class Publication(models.Model):
     date = models.DateField()
 
     def __unicode__(self):
-        return self.pub_title
+        return self.title
 
 
 class Journal(models.Model):
@@ -43,7 +43,7 @@ class Journal(models.Model):
     link = models.URLField(verify_exists=False)
 
     def __unicode__(self):
-        return self.journal_title
+        return self.title
 
 
 ## Useful Links

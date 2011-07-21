@@ -10,8 +10,8 @@ urlpatterns = patterns('',
                        url(r'^$', direct_to_template, {'template':'home.html'}),
                        url(r'^courses/$', 'rebus_site.courses.views.courses'),
                        url(r'^eresources/$', 'rebus_site.resources.views.e_resources'),
-                       #url(r'^rresources/$', 'rebus_site.resources.views.rresources'),
-                       #url(r'^links/$', 'rebus_site.resources.views.links'),
+                       url(r'^research/$', 'rebus_site.resources.views.research'),
+                       url(r'^links/$', 'rebus_site.resources.views.links'),
                        
 
                        # Uncomment the admin/doc line below to enable admin documentation:

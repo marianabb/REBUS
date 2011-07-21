@@ -36,13 +36,11 @@ Wed july 20th
 - Status email 0.25hr
 - Educational resources table 0.5hr
 - Reading about file management to handle book pictures + actually doing it + menu order change 0.75hr
+- Design changes 0.75hr
 
-
-
-
-
-- Create a view to list research resources 
-- Create a view to list useful links
+Thu july 21st
+- Research Resources table 0.5hr
+- Useful links table 0.25hr
 
 
 

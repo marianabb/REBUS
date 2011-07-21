@@ -19,3 +19,24 @@ def e_resources(request):
                                                             'book_columns': book_columns,
                                                             'exercises': all_exercises,
                                                             'exercise_columns': exercise_columns})
+
+
+def research(request):
+    pub_columns = ['Title', 'Author', 'Link', 'Date']
+    journal_columns = ['Title', 'Link']
+
+    all_pubs = Publication.objects.all().order_by('title')
+    all_journals = Journal.objects.all().order_by('title')
+    
+    return render_to_response('resources/research.html', {'pubs': all_pubs, 
+                                                            'pub_columns': pub_columns,
+                                                            'journals': all_journals,
+                                                            'journal_columns': journal_columns})
+
+def links(request):
+    columns = ['Name', 'Description', 'Link'] #TODO perhaps truncate description (django filters)
+
+    all_links = Link.objects.all().order_by('name')
+    
+    return render_to_response('resources/links.html', {'links': all_links, 
+                                                       'columns': columns})

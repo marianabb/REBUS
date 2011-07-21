@@ -11,7 +11,9 @@ Author URI: http://www.freewpthemes.net/
 body {
 	margin: 0;
 	padding: 0;
-	background: #3B3513 url(/static/images/img01.gif) repeat-x left top;
+	/*background: #3B3513 url(/static/images/img01.gif) repeat-x left top;*/
+    /*background: #4F4A2B url(/static/images/img01.gif) repeat-x left top;*/
+    background: #696239 url(/static/images/img01.gif) repeat-x left top;
 	font-size: 13px;
 	text-align: justify;
 	color: #5C5116;
@@ -138,7 +140,7 @@ hr {
 
 .byline {
 	margin: -10px 0px 0px 0px;
-	padding-left: 33px;
+	ipadding-left: 33px;
 	border-bottom: 1px solid #CCCCCC;
 	color: #646464;
 }
@@ -230,7 +232,8 @@ hr {
 }
 
 #sidebar li li {
-	border-bottom: 1px dotted #615929;
+	/*border-bottom: 1px dotted #615929;*/
+    border-bottom: 1px dotted #B1AD95;
 	padding: 5px 0px;
 }
 
@@ -241,11 +244,12 @@ hr {
 	background: url(/static/images/img03.gif) no-repeat left top;
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 18px;
-	color: #CFBF66;
+	/*color: #CFBF66;*/
+    color: #B1AD95
 }
 
 #sidebar h2 a {
-	background: url(/static/images/img03.gif) no-repeat left 50%;
+	background: url(/static/images/img03_light.gif) no-repeat left 50%;
 }
 
 #sidebar a {

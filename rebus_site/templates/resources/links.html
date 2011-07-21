@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}- Links {% endblock %}
+
+{% block scripts %}
+<style type="text/css" title="currentStyle"> 
+  @import "{% get_static_prefix %}js/dataTables/css/demo_page.css";
+  @import "{% get_static_prefix %}js/dataTables/css/demo_table_jui.css";
+  @import "{% get_static_prefix %}js/dataTables/themes/smoothness/jquery-ui-1.8.4.custom.css";
+</style> 
+<script src="{% get_static_prefix %}js/dataTables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+  oTable = $('#links').dataTable({
+  "bJQueryUI": true,
+  "sPaginationType": "full_numbers"
+  });
+  });
+</script>
+{% endblock %}
+
+{% block content %}      
+		<div class="post">
+			<h1 class="title">Useful Links</h1>            
+            <p class="byline">&nbsp;</p>
+			<div class="demo_jui">
+			  <!--p-->
+                <table cellpadding="0" cellspacing="0" border="0" class="display" id="links"> 
+	              <thead> 
+		            <tr> 
+                      {% for column in columns %}
+			          <th>{{ column }}</th>
+                      {% endfor %}
+		            </tr> 
+	              </thead> 
+	              <tbody> 
+                    {% for link in links %}
+                    <tr class="gradeA">
+                      <td>{{ link.name }}</td>
+                      <td>{{ link.description }}</td>
+                      <td><a href="{{ link.link }}">{{ link.link }}</a></td>
+                    </tr>
+                    {% endfor %} 
+                  </tbody> 
+	              <tfoot> 
+		            <tr> 
+                      {% for column in columns %}
+			          <th>{{ column }}</th>
+                      {% endfor %}
+		            </tr> 
+	              </tfoot> 
+                </table>       
+                <!--/p-->
+			</div>
+		</div>
+{% endblock %}

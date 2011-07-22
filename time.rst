@@ -42,6 +42,9 @@ Thu july 21st
 - Research Resources table 0.5hr
 - Useful links table 0.25hr
 
+Fri july 22nd
+- Reading about form management. Not there yet, but learning.. 1.5hr
+- Add Educational Resource. It's working, just needs some details 1.5hr
 
 
 - Add educational resource
@@ -56,6 +59,9 @@ Thu july 21st
  TODO:
 ======
 - Check https://docs.djangoproject.com/en/dev/howto/static-files/ to manage static files at deployment phase.
+- Verify RequestContext calls in resources/views.py
+- Admin DOES NOT eliminate media when instances are deleted >:(
+
 
 
 

@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 
 ## Educational Resources
 class Book(models.Model):
@@ -54,3 +55,12 @@ class Link(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+## Forms based on the previously defines models ##
+
+class BookForm(ModelForm):
+    class Meta:
+        model = Book
+
+

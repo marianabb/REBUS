@@ -35,7 +35,11 @@
 	              <tbody> 
                     {% for book in books %}
                     <tr class="gradeA">
-                      <td><img src="{{ book.picture.url }}"></img></td>
+                      {% if book.picture %}
+                      <td><img src=" {{ book.picture.url }}"></img></td>
+                      {% else %}
+                      <td> No image available </td>
+                      {% endif %}
                       <td>{{ book.title }}</td>
                       <td>{{ book.author }}</td>
                       <td><a href="{{ book.link }}">{{ book.link }}</a></td>
@@ -72,7 +76,7 @@
                 <tr class="gradeA">
                   <td>{{ ex.title }}</td>
                   <td>{{ ex.author }}</td>
-                  <td>{{ ex.type }}</td>
+                  <td>{{ ex.get_level_display }}</td>
                   <td><a href="{{ ex.link }}">{{ ex.link }}</a></td>
                 </tr>
                 {% endfor %} 
@@ -85,7 +89,7 @@
 		        </tr> 
 	          </tfoot> 
             </table> 
-            <p><a href="">Add a new exercise</a></p>
+            <p><a href="/add_exercise/">Add a new exercise</a></p>
 		  </div>
           <div class="spacer"></div> 
 		</div>

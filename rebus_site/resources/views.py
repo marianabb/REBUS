@@ -1,24 +1,25 @@
+from django.conf import settings
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from resources.models import Book, ExerciseMaterial, Publication, Journal, Link
-from resources.models import BookForm
+from resources.models import BookForm, ExerciseForm, PubForm, JournalForm, LinkForm
 from django.template import RequestContext
+from django.core.files.storage import default_storage
 
-
-def e_resources(request):
+## Display views ##
+def e_resources(request):    
     book_columns = ['Image', 'Title', 'Author', 'Link']
     exercise_columns = ['Title', 'Author', 'Type', 'Link']
 
     all_books = Book.objects.all().order_by('title') #TODO the picture MUST be shown as thumbnail size!
     all_exercises = ExerciseMaterial.objects.all().order_by('title')
-    for e in all_exercises:
-        e.type = e.get_level_display()
+    #for e in all_exercises: #TODO remove
+    #    e.type = e.get_level_display()
     
     return render_to_response('resources/eresources.html', {'books': all_books, 
                                                             'book_columns': book_columns,
                                                             'exercises': all_exercises,
-                                                            'exercise_columns': exercise_columns},
-                              context_instance=RequestContext(request)) #TODO is this necessary?
+                                                            'exercise_columns': exercise_columns})
 
 
 def research(request):
@@ -42,22 +43,64 @@ def links(request):
                                                        'columns': columns})
 
 
+## Update views ##
 def add_book(request):
     if request.method == 'POST':
         form = BookForm(request.POST, request.FILES)
         if form.is_valid():
-            print "FILEEE", request.FILES['picture']
-            handle_uploaded_file(request.FILES['picture'])
+            if request.FILES:
+                path = settings.NEW_MEDIA_DIR + 'books/'
+                default_storage.save(path, request.FILES['picture'])
             form.save()
             return HttpResponseRedirect('/eresources/')
     else:
         form = BookForm()
-    return render_to_response('resources/add_book.html', {'form': form},
-                              context_instance=RequestContext(request)) #TODO is this ok here?
+    return render_to_response('resources/add_resource.html', {'form': form, 'title': 'book', 'url_name': '/add_book/'},
+                              context_instance=RequestContext(request))
+
+def add_exercise(request):
+    if request.method == 'POST':
+        form = ExerciseForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/eresources/')
+    else:
+        form = ExerciseForm()
+    return render_to_response('resources/add_resource.html', {'form': form, 'title': 'exercise material', 'url_name': '/add_exercise/'},
+                              context_instance=RequestContext(request))
 
 
-def handle_uploaded_file(f):
-    destination = open('/Users/mariana/Documents/Work/REBUS/rebus_site/media/books/'+str(f), 'wb+') # TODO Better way!
-    for chunk in f.chunks():
-        destination.write(chunk)
-    destination.close()
+def add_publication(request):
+    if request.method == 'POST':
+        form = PubForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/research/')
+    else:
+        form = PubForm()
+    return render_to_response('resources/add_resource.html', {'form': form, 'title': 'publication', 'url_name': '/add_publication/'},
+                              context_instance=RequestContext(request))
+
+
+def add_journal(request):
+    if request.method == 'POST':
+        form = JournalForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/research/')
+    else:
+        form = JournalForm()
+    return render_to_response('resources/add_resource.html', {'form': form, 'title': 'journal', 'url_name': '/add_journal/'},
+                              context_instance=RequestContext(request))
+
+
+def add_link(request):
+    if request.method == 'POST':
+        form = LinkForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/links/')
+    else:
+        form = LinkForm()
+    return render_to_response('resources/add_resource.html', {'form': form, 'title': 'link', 'url_name': '/add_link/'},
+                              context_instance=RequestContext(request))

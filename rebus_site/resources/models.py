@@ -5,7 +5,7 @@ from django.forms import ModelForm
 class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
-    picture = models.FileField(upload_to="books", blank=True, null=True) # TODO change to image
+    picture = models.FileField(upload_to="books", blank=True, null=True) # TODO change to image, change filename perhaps
     link = models.URLField(verify_exists=False, blank=True, null=True)
 
     def __unicode__(self):
@@ -57,10 +57,28 @@ class Link(models.Model):
         return self.name
 
 
-## Forms based on the previously defines models ##
+## Forms based on the previously defined models ##
 
 class BookForm(ModelForm):
     class Meta:
         model = Book
 
 
+class ExerciseForm(ModelForm):
+    class Meta:
+        model = ExerciseMaterial
+
+
+class PubForm(ModelForm):
+    class Meta:
+        model = Publication
+
+
+class JournalForm(ModelForm):
+    class Meta:
+        model = Journal
+
+
+class LinkForm(ModelForm):
+    class Meta:
+        model = Link

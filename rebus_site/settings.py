@@ -115,6 +115,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+    'uni_form',
     'resources',
     'courses',
     'eventmgr'
@@ -142,3 +143,6 @@ LOGGING = {
         },
     }
 }
+
+## Extra Settings
+NEW_MEDIA_DIR = "/Users/mariana/Documents/Work/REBUS/rebus_site/media/"

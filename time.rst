@@ -59,11 +59,12 @@ Mon july 25th
 - More user registration. Templates for profiles and registration 0.5hr
 - Smtp + activation email configuration 1hr
 - More registration and user profiles management. It works, needs to be completed. 3hr
-- More registration 7:00 - 
+- More registration. Completed, just needs to add login pages. 1hr
+- Registration, login pages for adding resources 1hr
+- Login link and details 9:30 - 
 
 
 - User registration
-- Manage user profiles
 - Map
 - Calendar
 - Search?

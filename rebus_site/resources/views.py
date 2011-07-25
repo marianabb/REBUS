@@ -5,6 +5,8 @@ from resources.models import Book, ExerciseMaterial, Publication, Journal, Link
 from resources.models import BookForm, ExerciseForm, PubForm, JournalForm, LinkForm
 from django.template import RequestContext
 from django.core.files.storage import default_storage
+from django.contrib.auth.decorators import login_required
+
 
 ## Display views ##
 def e_resources(request):    
@@ -13,13 +15,12 @@ def e_resources(request):
 
     all_books = Book.objects.all().order_by('title') #TODO the picture MUST be shown as thumbnail size!
     all_exercises = ExerciseMaterial.objects.all().order_by('title')
-    #for e in all_exercises: #TODO remove
-    #    e.type = e.get_level_display()
     
     return render_to_response('resources/eresources.html', {'books': all_books, 
                                                             'book_columns': book_columns,
                                                             'exercises': all_exercises,
-                                                            'exercise_columns': exercise_columns})
+                                                            'exercise_columns': exercise_columns},
+                              context_instance=RequestContext(request))
 
 
 def research(request):
@@ -32,7 +33,8 @@ def research(request):
     return render_to_response('resources/research.html', {'pubs': all_pubs, 
                                                             'pub_columns': pub_columns,
                                                             'journals': all_journals,
-                                                            'journal_columns': journal_columns})
+                                                            'journal_columns': journal_columns},
+                              context_instance=RequestContext(request))
 
 def links(request):
     columns = ['Name', 'Description', 'Link'] #TODO perhaps truncate description (django filters)
@@ -40,16 +42,18 @@ def links(request):
     all_links = Link.objects.all().order_by('name')
     
     return render_to_response('resources/links.html', {'links': all_links, 
-                                                       'columns': columns})
+                                                       'columns': columns},
+                              context_instance=RequestContext(request))
 
 
 ## Update views ##
+@login_required()
 def add_book(request):
     if request.method == 'POST':
         form = BookForm(request.POST, request.FILES)
         if form.is_valid():
             if request.FILES:
-                path = settings.NEW_MEDIA_DIR + 'books/'
+                path = settings.MEDIA_ROOT + 'books/'
                 default_storage.save(path, request.FILES['picture'])
             form.save()
             return HttpResponseRedirect('/eresources/')
@@ -58,6 +62,7 @@ def add_book(request):
     return render_to_response('resources/add_resource.html', {'form': form, 'title': 'book', 'url_name': '/add_book/'},
                               context_instance=RequestContext(request))
 
+@login_required()
 def add_exercise(request):
     if request.method == 'POST':
         form = ExerciseForm(request.POST)
@@ -70,6 +75,7 @@ def add_exercise(request):
                               context_instance=RequestContext(request))
 
 
+@login_required()
 def add_publication(request):
     if request.method == 'POST':
         form = PubForm(request.POST)
@@ -82,6 +88,7 @@ def add_publication(request):
                               context_instance=RequestContext(request))
 
 
+@login_required()
 def add_journal(request):
     if request.method == 'POST':
         form = JournalForm(request.POST)
@@ -94,6 +101,7 @@ def add_journal(request):
                               context_instance=RequestContext(request))
 
 
+@login_required()
 def add_link(request):
     if request.method == 'POST':
         form = LinkForm(request.POST)

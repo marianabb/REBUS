@@ -20,7 +20,8 @@ book_info = {
     }
 
 urlpatterns = patterns('',
-                       url(r'^$', direct_to_template, {'template':'home.html'}),
+                       #url(r'^$', direct_to_template, {'template':'home.html'}),
+                       url(r'^$', 'rebus_site.profilemgr.views.home'),
 
                        # Display views
                        url(r'^courses/$', 'rebus_site.courses.views.courses'),
@@ -35,15 +36,28 @@ urlpatterns = patterns('',
                        url(r'^add_journal/$', 'rebus_site.resources.views.add_journal', name='add_journal'),
                        url(r'^add_link/$', 'rebus_site.resources.views.add_link', name='add_link'),
 
-                       # Django-profiles
-                       #(r'^profiles/', include('profiles.urls')),
-
                        # Django-registration
                        url(r'^accounts/register/$', register, {'backend': 'registration.backends.default.DefaultBackend','form_class': UserProfileForm}, name='registration_register'),
                        (r'^accounts/', include(regUrls)),
+
+                       # Login page (template in registration/login.html)
+                       (r'^accounts/login/$', 'django.contrib.auth.views.login'),
+
+                       # Logout page
+                       (r'^accounts/logout/$', 'django.contrib.auth.views.logout'),
 
                        # Uncomment the admin/doc line below to enable admin documentation:
                            url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
                        # Uncomment the next line to enable the admin:
                            url(r'^admin/', include(admin.site.urls)),
                        )
+
+
+# TODO only for development
+# Serves the files in MEDIA_ROOT
+if settings.DEBUG:
+    urlpatterns += patterns('',
+                            url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
+                'document_root': settings.MEDIA_ROOT,
+                }),
+                            )

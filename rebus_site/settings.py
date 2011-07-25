@@ -120,8 +120,7 @@ INSTALLED_APPS = (
     'courses',
     'eventmgr',
     'profilemgr',
-    'profiles',
-    'registration'
+    'registration',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -148,8 +147,6 @@ LOGGING = {
 }
 
 ## Extra Settings
-NEW_MEDIA_DIR = "/Users/mariana/Documents/Work/REBUS/rebus_site/media/"
-
 AUTH_PROFILE_MODULE = 'profilemgr.UserProfile'
 
 # Number of days users will have to activate their accounts after registering
@@ -158,3 +155,19 @@ ACCOUNT_ACTIVATION_DAYS = 7
 # Email backend only for development
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# Url where the user can login
+LOGIN_URL = "/accounts/login/"
+
+# Default redirect url after a user has been logged in (if next is not defined)
+LOGIN_REDIRECT_URL = "/"
+
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.request",
+    "django.contrib.messages.context_processors.messages",
+    )

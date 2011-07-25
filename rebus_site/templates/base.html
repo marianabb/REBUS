@@ -51,7 +51,11 @@ Released   : 20090411
                   <li><a href="/courses">Courses</a></li>
                   <li><a href="/research">Research Resources</a></li>
                   <li><a href="/links">Useful Links</a></li>
-                  <li><a href="/users">Users</a></li>
+                  {% if request.user.is_authenticated %}
+                  <li><a href="/accounts/logout/">Logout</a></li>
+                  {% else %}
+                  <li><a href="/accounts/login/">Login</a></li>
+                  {% endif %}
 				</ul>
 			</li>
 		</ul>

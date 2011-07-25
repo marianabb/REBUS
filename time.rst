@@ -53,7 +53,13 @@ Sun july 24th
 - Add Exercises 0.25hr
 - Add Publications and journals 0.5hr
 - Add links 0.25hr
-- Reading about user registration 12:11 - 
+- Reading about user registration + first attempts 2hr
+
+Mon july 25th
+- More user registration. Templates for profiles and registration 0.5hr
+- Smtp + activation email configuration 1hr
+- More registration and user profiles management. It works, needs to be completed. 3hr
+- More registration 7:00 - 
 
 
 - User registration
@@ -70,7 +76,8 @@ Sun july 24th
 - Admin DOES NOT eliminate media when instances are deleted.
 - Publications Date, maybe only year and month are necessary.
 - Webmaster email in footer.
-
+- Activation email configuration.
+- (Django-registration) A script 'registration/bin/deleted_expired_users.py', is provided, which is suitable for use as a regular cron job.
 
 
 pwd: BSArebus

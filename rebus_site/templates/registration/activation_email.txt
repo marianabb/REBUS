@@ -1,0 +1,5 @@
+Welcome to REBUS!
+
+You can complete registration by clicking the following link: http://127.0.0.1:8000/accounts/activate/{{ activation_key }}
+
+The link will be active for {{ expiration_days }} days.

@@ -3,6 +3,10 @@ from django.views.generic.simple import direct_to_template
 from django.views.generic import create_update
 from django.conf import settings
 from resources.models import Book, ExerciseMaterial
+from registration.views import register
+from profilemgr import regbackend
+from profilemgr.forms import UserProfileForm
+import registration.backends.default.urls as regUrls
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -32,23 +36,14 @@ urlpatterns = patterns('',
                        url(r'^add_link/$', 'rebus_site.resources.views.add_link', name='add_link'),
 
                        # Django-profiles
-                       url(r'^profiles/', include('profiles.urls')),
+                       #(r'^profiles/', include('profiles.urls')),
 
                        # Django-registration
-                       (r'^accounts/', include('registration.urls')),
+                       url(r'^accounts/register/$', register, {'backend': 'registration.backends.default.DefaultBackend','form_class': UserProfileForm}, name='registration_register'),
+                       (r'^accounts/', include(regUrls)),
 
                        # Uncomment the admin/doc line below to enable admin documentation:
-                           url(r'^admin/doc/', include('django.contrib.admindocs.urls')),                       
+                           url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
                        # Uncomment the next line to enable the admin:
                            url(r'^admin/', include(admin.site.urls)),
                        )
-
-
-# TODO this is only for development
-if settings.DEBUG:
-    urlpatterns += patterns('',
-                            url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {
-                'document_root': settings.MEDIA_ROOT,
-                }),
-                            )
-    

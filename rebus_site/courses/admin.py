@@ -1,6 +1,5 @@
 from courses.models import Course
 from courses.models import School
-from courses.models import Lecturer
 from django.contrib import admin
 
 class CourseAdmin(admin.ModelAdmin):
@@ -19,9 +18,3 @@ class SchoolAdmin(admin.ModelAdmin):
     inlines = [CourseInline]
 
 admin.site.register(School, SchoolAdmin)
-
-
-class LecturerAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'email')
-
-admin.site.register(Lecturer, LecturerAdmin)

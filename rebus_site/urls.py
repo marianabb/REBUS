@@ -31,6 +31,12 @@ urlpatterns = patterns('',
                        url(r'^add_journal/$', 'rebus_site.resources.views.add_journal', name='add_journal'),
                        url(r'^add_link/$', 'rebus_site.resources.views.add_link', name='add_link'),
 
+                       # Django-profiles
+                       url(r'^profiles/', include('profiles.urls')),
+
+                       # Django-registration
+                       (r'^accounts/', include('registration.urls')),
+
                        # Uncomment the admin/doc line below to enable admin documentation:
                            url(r'^admin/doc/', include('django.contrib.admindocs.urls')),                       
                        # Uncomment the next line to enable the admin:

@@ -118,7 +118,10 @@ INSTALLED_APPS = (
     'uni_form',
     'resources',
     'courses',
-    'eventmgr'
+    'eventmgr',
+    'profilemgr',
+    'profiles',
+    'registration'
 )
 
 # A sample logging configuration. The only tangible logging
@@ -146,3 +149,8 @@ LOGGING = {
 
 ## Extra Settings
 NEW_MEDIA_DIR = "/Users/mariana/Documents/Work/REBUS/rebus_site/media/"
+
+AUTH_PROFILE_MODULE = 'profilemgr.UserProfile'
+
+# Number of days users will have to activate their accounts after registering
+ACCOUNT_ACTIVATION_DAYS = '7'

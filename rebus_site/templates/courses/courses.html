@@ -40,8 +40,8 @@
                       <td>{{ course.school }}</td>
                       <td>{{ course.lecturer }}</td>
                       <td>{{ course.language }}</td>
-                      <td>{{ course.level }}</td>
-                      <td>{{ course.type }}</td>
+                      <td>{{ course.get_level_display }}</td>
+                      <td>{{ course.get_type_display }}</td>
                     </tr>
                     {% endfor %} 
                   </tbody> 

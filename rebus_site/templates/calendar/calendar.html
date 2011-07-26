@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}- Calendar {% endblock %}
+
+{% block scripts %}
+<link rel="stylesheet" type="text/css" href="{% get_static_prefix %}js/fullcalendar/fullcalendar.css" />
+<script type="text/javascript" src="{% get_static_prefix %}js/fullcalendar/fullcalendar.min.js"></script>
+<script type="text/javascript" src="{% get_static_prefix %}js/fullcalendar/gcal.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+  $("#calendar").fullCalendar({
+  
+  eventSources: [
+  "https://www.google.com/calendar/feeds/a9n8ecdl44ttrpbnev8b2psibo%40group.calendar.google.com/public/basic"
+  ],
+
+  eventClick: function(event) {
+  return false;
+  },
+  eventMouseOver: function(event){
+  return false;
+  }
+  })
+  });
+</script>
+{% endblock %}
+
+{% block content %}      
+<div class="post">
+  <h1 class="title">REBUS Calendar</h1>            
+  <p class="byline">&nbsp;</p>
+  <div id="calendar">
+  </div>
+  <div class="spacer"></div> 
+</div>
+{% endblock %}

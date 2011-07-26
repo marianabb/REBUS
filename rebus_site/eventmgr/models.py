@@ -10,4 +10,4 @@ class Event(models.Model):
     contact = models.TextField(blank=True, null=True)
     
     def __unicode__(self):
-        return self.event_name
+        return self.name

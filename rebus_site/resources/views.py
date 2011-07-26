@@ -84,7 +84,7 @@ def add_publication(request):
             return HttpResponseRedirect('/research/')
     else:
         form = PubForm()
-    return render_to_response('resources/add_resource.html', {'form': form, 'title': 'publication', 'url_name': '/add_publication/'},
+    return render_to_response('resources/add_publication.html', {'form': form, 'title': 'publication', 'url_name': '/add_publication/'},
                               context_instance=RequestContext(request))
 
 

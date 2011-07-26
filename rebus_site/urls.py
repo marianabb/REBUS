@@ -7,6 +7,7 @@ from registration.views import register
 from profilemgr import regbackend
 from profilemgr.forms import UserProfileForm
 import registration.backends.default.urls as regUrls
+import schedule.urls as schedUrls
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -20,8 +21,8 @@ book_info = {
     }
 
 urlpatterns = patterns('',
-                       #url(r'^$', direct_to_template, {'template':'home.html'}),
-                       url(r'^$', 'rebus_site.profilemgr.views.home'),
+                       url(r'^$', direct_to_template, {'template':'home.html'}),
+                       #url(r'^$', 'rebus_site.profilemgr.views.home'),
 
                        # Display views
                        url(r'^courses/$', 'rebus_site.courses.views.courses'),
@@ -45,6 +46,9 @@ urlpatterns = patterns('',
 
                        # Logout page
                        (r'^accounts/logout/$', 'django.contrib.auth.views.logout'),
+                       
+                       # Events calendar
+                       url(r'^calendar/', direct_to_template, {'template': 'calendar/calendar.html'}),
 
                        # Uncomment the admin/doc line below to enable admin documentation:
                            url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

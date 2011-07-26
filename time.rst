@@ -61,7 +61,13 @@ Mon july 25th
 - More registration and user profiles management. It works, needs to be completed. 3hr
 - More registration. Completed, just needs to add login pages. 1hr
 - Registration, login pages for adding resources 1hr
-- Login link and details 9:30 - 
+- Login/logout pages and details 1.75hr
+- Thinking about calendar. First attempts with django-schedule 0.75hr
+
+Tue july 26th
+- More tests with django-schedule, finding JQuery tools 1hr
+- Adding DatePicker to add_publication and for calendar use 0.5hr
+- Tests with different calendars 12:45 - 
 
 
 - User registration
@@ -79,7 +85,10 @@ Mon july 25th
 - Webmaster email in footer.
 - Activation email configuration.
 - (Django-registration) A script 'registration/bin/deleted_expired_users.py', is provided, which is suitable for use as a regular cron job.
-
+- Clean admin
+- Remove schedule from templates
+- Jquery-ui smoothness theme css is saved TWICE in static and dataTables
+- profilemgr/views has the home unused view
 
 pwd: BSArebus
 

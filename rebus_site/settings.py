@@ -121,6 +121,7 @@ INSTALLED_APPS = (
     'eventmgr',
     'profilemgr',
     'registration',
+#    'schedule',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -171,3 +172,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
     "django.contrib.messages.context_processors.messages",
     )
+
+# Django-schedule
+#FIRST_DAY_OF_WEEK = 1 # Monday

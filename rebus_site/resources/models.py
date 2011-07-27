@@ -32,7 +32,7 @@ class ExerciseMaterial(models.Model):
 class Publication(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
-    link = models.URLField(verify_exists=False)
+    link = models.URLField(verify_exists=False, blank=True, null=True)
     date = models.DateField()
 
     def __unicode__(self):
@@ -73,7 +73,7 @@ class PubForm(ModelForm):
     class Meta:
         model = Publication
 
-
+    
 class JournalForm(ModelForm):
     class Meta:
         model = Journal

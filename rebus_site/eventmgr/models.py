@@ -1,13 +1,9 @@
 from django.db import models
 
-class Event(models.Model):
+class GCalendar(models.Model):
     name = models.CharField(max_length=100)
-    beginning = models.DateField()
-    end = models.DateField()
-    location = models.TextField()
-    description = models.TextField(blank=True, null=True)
-    language = models.CharField(max_length=50, blank=True, null=True)
-    contact = models.TextField(blank=True, null=True)
+    link = models.CharField(max_length=150)
     
     def __unicode__(self):
         return self.name
+    

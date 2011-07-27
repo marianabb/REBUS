@@ -12,14 +12,14 @@
   $("#calendar").fullCalendar({
   
   eventSources: [
-  "https://www.google.com/calendar/feeds/a9n8ecdl44ttrpbnev8b2psibo%40group.calendar.google.com/public/basic"
+  {{ calendar_links|safe }}
   ],
 
   eventClick: function(event) {
+  if (event.url) {
+  window.open(event.url, event.title, "width=500,height=300,left=500,top=300");
   return false;
-  },
-  eventMouseOver: function(event){
-  return false;
+  }
   }
   })
   });
@@ -28,7 +28,7 @@
 
 {% block content %}      
 <div class="post">
-  <h1 class="title">REBUS Calendar</h1>            
+  <h1 class="title">ReBuS Calendar</h1>            
   <p class="byline">&nbsp;</p>
   <div id="calendar">
   </div>

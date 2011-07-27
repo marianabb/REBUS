@@ -1,4 +1,4 @@
-Welcome to REBUS!
+Welcome to ReBuS!
 
 You can complete registration by clicking the following link: http://127.0.0.1:8000/accounts/activate/{{ activation_key }}
 

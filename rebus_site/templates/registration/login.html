@@ -12,7 +12,7 @@
 
 {% block content %}
 <div class="post">
-  <h1 class="title">Sign in to REBUS</h1>            
+  <h1 class="title">Sign in to ReBuS</h1>            
   <p class="byline">&nbsp;</p>
   <p>
     {% if form.errors %}
@@ -26,5 +26,6 @@
     <input type="hidden" name="next" value="{{ next }}" />
   </form>
   </p>
+  <p>If you don't have an account <a href="/accounts/register/">please register</a></p>
 </div>
 {% endblock %}

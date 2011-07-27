@@ -1,8 +1,8 @@
-from eventmgr.models import Event
+from eventmgr.models import GCalendar
 from django.contrib import admin
 
 
-class EventAdmin(admin.ModelAdmin):
-    list_display = ('name', 'beginning', 'end', 'location', 'language')
+class GCalAdmin(admin.ModelAdmin):
+    list_display = ('link',)
 
-admin.site.register(Event, EventAdmin)
+admin.site.register(GCalendar, GCalAdmin)

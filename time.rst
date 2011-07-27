@@ -67,12 +67,16 @@ Mon july 25th
 Tue july 26th
 - More tests with django-schedule, finding JQuery tools 1hr
 - Adding DatePicker to add_publication and for calendar use 0.5hr
-- Tests with different calendars 12:45 - 
+- Fullcalendar working with google calendar, not customizable yet 1.5hr
+- Mail with progress report for Ivan and Daniela 1hr
+- Calendar tests. Event detail 1.75hr
+
+Wed july 27th
+- Some details (ReBuS, links on publications not mandatory) 0.25hr
+- Adding calendar link customization, colors and multiple calendars 2hr
 
 
-- User registration
 - Map
-- Calendar
 - Search?
 
 
@@ -89,6 +93,10 @@ Tue july 26th
 - Remove schedule from templates
 - Jquery-ui smoothness theme css is saved TWICE in static and dataTables
 - profilemgr/views has the home unused view
+- Improve README
+- Is calendar public or only registered users?
+
+
 
 pwd: BSArebus
 

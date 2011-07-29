@@ -85,8 +85,6 @@ Fri july 29th
 
 
 
-- Search?
-
 
 ======
  TODO:
@@ -103,6 +101,7 @@ Fri july 29th
 - profilemgr/views has the home unused view
 - Improve README
 - Is calendar public or only registered users?
+- Use better shortcut in views.
 
 
 

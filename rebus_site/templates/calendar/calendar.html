@@ -12,7 +12,7 @@
   $("#calendar").fullCalendar({
   
   eventSources: [
-  {{ calendar_links|safe }}
+  "{{ calendar_links|safe }}"
   ],
 
   eventClick: function(event) {

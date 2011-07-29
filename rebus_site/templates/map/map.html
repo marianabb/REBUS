@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}- Map {% endblock %}
+
+{% block scripts %}
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?sensor=false">
+</script>
+<script id="test_data" type="text/javascript" charset="utf-8">
+//var locations = {{ locations|safe }}
+</script>
+<script type="text/javascript" charset="utf-8">
+ function initialize() {
+    var locations = {{ locations|safe }};
+    var latlng = new google.maps.LatLng({{ init_coord|safe }});
+    var myOptions = {
+      zoom: {{ init_zoom|safe }},
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+    var markers = [];
+    var i = 0;
+    for(i = 0; i < {{ locations_size|safe }}; i++){
+    var latLng = new google.maps.LatLng(locations[i].fields.latitude, locations[i].fields.longitude);
+    var marker = new google.maps.Marker({
+              'position': latLng,
+              'title': locations[i].fields.name });
+
+    var infowindow = new google.maps.InfoWindow(
+      { 
+        size: new google.maps.Size(50,50)
+      });
+
+    markers.push(marker);
+    }
+
+    for(var i = 0; i < markers.length; i++){
+       var marker = markers[i];
+                       
+       google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(this.getTitle());
+          infowindow.open(map, this);
+       });
+
+       google.maps.event.addListener(marker, 'dblclick', function() {
+          map.setCenter(this.getPosition());
+          map.setZoom(8);
+       });
+    }
+
+
+    if (window.MarkerClusterer === undefined){
+       for (i in markers) {
+          markers[i].setMap(map);
+       }
+    } else {
+       var markerCluster = new MarkerClusterer(map, markers);
+    }
+  }
+</script>
+{% endblock %}
+
+{% block body %}
+<body onload="initialize()">
+{% endblock %}
+
+
+{% block content %}      
+<div class="post">
+  <h1 class="title">ReBuS Map</h1>            
+  <p class="byline">&nbsp;</p>
+  <div id="map_canvas" style="width:700px; height:450px"></div>
+</div>
+{% endblock %}

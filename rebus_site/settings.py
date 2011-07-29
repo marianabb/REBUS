@@ -121,7 +121,7 @@ INSTALLED_APPS = (
     'eventmgr',
     'profilemgr',
     'registration',
-#    'schedule',
+    'locations',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -173,5 +173,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.contrib.messages.context_processors.messages",
     )
 
-# Django-schedule
-#FIRST_DAY_OF_WEEK = 1 # Monday
+# Map Initialization
+MAP_ZOOM = '2'
+MAP_INIT_LAT = '37.649034'
+MAP_INIT_LON = '-27.617187'

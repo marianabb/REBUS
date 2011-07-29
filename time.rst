@@ -72,11 +72,19 @@ Tue july 26th
 - Calendar tests. Event detail 1.75hr
 
 Wed july 27th
-- Some details (ReBuS, links on publications not mandatory) 0.25hr
+- Some details (string management, ReBuS, links on publications not mandatory) 0.5hr
 - Adding calendar link customization, colors and multiple calendars 2hr
 
+Thu july 28th
+- Reading about google maps to include in the page. 1hr
+- Including google map with test markers 1hr
+- Adding customization to coordinates 1hr
 
-- Map
+Fri july 29th
+- More map details. Info windows and zoom for tags. 2.5hr
+
+
+
 - Search?
 
 

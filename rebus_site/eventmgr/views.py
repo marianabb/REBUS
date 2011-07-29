@@ -4,7 +4,7 @@ from django.template import RequestContext
 
 
 def show_calendar(request):
-    colors = ['blue', 'brown', 'green', 'black', 'red', 'purple', 'grey']
+    colors = ['blue', 'brown', 'green', 'purple', 'red', 'grey', 'black']
     links = ', '.join(('{url: "%s", color: "%s"}' % (cal.link, colors[i % len(colors)])) 
                       for (i, cal) in enumerate(GCalendar.objects.all()))
     

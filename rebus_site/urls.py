@@ -50,6 +50,9 @@ urlpatterns = patterns('',
                        # Events calendar
                        url(r'^calendar/', 'rebus_site.eventmgr.views.show_calendar'),
 
+                       # Map
+                       url(r'^map/', 'rebus_site.locations.views.show_map'),
+
                        # Uncomment the admin/doc line below to enable admin documentation:
                            url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
                        # Uncomment the next line to enable the admin:

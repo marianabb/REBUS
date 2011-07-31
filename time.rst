@@ -46,7 +46,6 @@ Fri july 22nd
 - Reading about form management. Not there yet, but learning.. 1.5hr
 - Add Books. It's working, just needs some details 1.5hr
 
-
 Sun july 24th
 - Add Books, file upload managing 0.75
 - Add Books, form design 0.25hr
@@ -83,26 +82,28 @@ Thu july 28th
 Fri july 29th
 - More map details. Info windows and zoom for tags. 2.5hr
 
+Sun july 31st
+- Misc missing things: footer, cleaning admin, cleaning app  1.25hr
+- Debug registration 1hr 
 
 
-
-======
+=======
  TODO:
-======
+=======
 - Check https://docs.djangoproject.com/en/dev/howto/static-files/ to manage static files at deployment phase.
 - Admin DOES NOT eliminate media when instances are deleted.
-- Publications Date, maybe only year and month are necessary.
-- Webmaster email in footer.
-- Activation email configuration.
+- Activation email configuration (site name).
 - (Django-registration) A script 'registration/bin/deleted_expired_users.py', is provided, which is suitable for use as a regular cron job.
-- Clean admin
-- Remove schedule from templates
 - Jquery-ui smoothness theme css is saved TWICE in static and dataTables
-- profilemgr/views has the home unused view
 - Improve README
-- Is calendar public or only registered users?
 - Use better shortcut in views.
 
+
+===========
+ Questions:
+===========
+- Is calendar public or only registered users?
+- Server to deploy please.
 
 
 pwd: BSArebus

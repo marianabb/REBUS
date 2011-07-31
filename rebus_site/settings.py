@@ -115,13 +115,15 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+
     'uni_form',
-    'resources',
-    'courses',
-    'eventmgr',
-    'profilemgr',
     'registration',
-    'locations',
+
+    'rebus_site.profilemgr',
+    'rebus_site.courses',
+    'rebus_site.resources',
+    'rebus_site.eventmgr',
+    'rebus_site.locations',
 )
 
 # A sample logging configuration. The only tangible logging

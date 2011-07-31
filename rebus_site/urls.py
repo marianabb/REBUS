@@ -13,6 +13,10 @@ import schedule.urls as schedUrls
 from django.contrib import admin
 admin.autodiscover()
 
+# Unregistering 'Sites' from the admin
+from django.contrib.sites.models import Site
+admin.site.unregister(Site)
+
 
 book_info = {
     "model": Book,

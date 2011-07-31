@@ -15,11 +15,3 @@ class UserProfile(models.Model):
     
     def __unicode__(self):
         return self.user.get_full_name() or self.user.username
-
-
-# Function to create a UserProfile when a User is created
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        UserProfile.objects.create(user=instance)
-
-post_save.connect(create_user_profile, sender=User)

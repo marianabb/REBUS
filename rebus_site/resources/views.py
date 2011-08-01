@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from resources.models import Book, ExerciseMaterial, Publication, Journal, Link
 from resources.models import BookForm, ExerciseForm, PubForm, JournalForm, LinkForm
@@ -16,11 +16,10 @@ def e_resources(request):
     all_books = Book.objects.all().order_by('title') #TODO the picture MUST be shown as thumbnail size!
     all_exercises = ExerciseMaterial.objects.all().order_by('title')
     
-    return render_to_response('resources/eresources.html', {'books': all_books, 
+    return render(request, 'resources/eresources.html', {'books': all_books, 
                                                             'book_columns': book_columns,
                                                             'exercises': all_exercises,
-                                                            'exercise_columns': exercise_columns},
-                              context_instance=RequestContext(request))
+                                                            'exercise_columns': exercise_columns})
 
 
 def research(request):
@@ -30,20 +29,18 @@ def research(request):
     all_pubs = Publication.objects.all().order_by('title')
     all_journals = Journal.objects.all().order_by('title')
     
-    return render_to_response('resources/research.html', {'pubs': all_pubs, 
+    return render(request, 'resources/research.html', {'pubs': all_pubs, 
                                                             'pub_columns': pub_columns,
                                                             'journals': all_journals,
-                                                            'journal_columns': journal_columns},
-                              context_instance=RequestContext(request))
+                                                            'journal_columns': journal_columns})
 
 def links(request):
-    columns = ['Name', 'Description', 'Link'] #TODO perhaps truncate description (django filters)
+    columns = ['Name', 'Description', 'Link']
 
     all_links = Link.objects.all().order_by('name')
     
-    return render_to_response('resources/links.html', {'links': all_links, 
-                                                       'columns': columns},
-                              context_instance=RequestContext(request))
+    return render(request, 'resources/links.html', {'links': all_links, 
+                                                       'columns': columns})
 
 
 ## Update views ##
@@ -59,8 +56,8 @@ def add_book(request):
             return HttpResponseRedirect('/eresources/')
     else:
         form = BookForm()
-    return render_to_response('resources/add_resource.html', {'form': form, 'title': 'book', 'url_name': '/add_book/'},
-                              context_instance=RequestContext(request))
+    return render(request, 'resources/add_resource.html', {'form': form, 'title': 'book', 'url_name': '/add_book/'})
+
 
 @login_required()
 def add_exercise(request):
@@ -71,8 +68,7 @@ def add_exercise(request):
             return HttpResponseRedirect('/eresources/')
     else:
         form = ExerciseForm()
-    return render_to_response('resources/add_resource.html', {'form': form, 'title': 'exercise material', 'url_name': '/add_exercise/'},
-                              context_instance=RequestContext(request))
+    return render(request, 'resources/add_resource.html', {'form': form, 'title': 'exercise material', 'url_name': '/add_exercise/'})
 
 
 @login_required()
@@ -84,8 +80,7 @@ def add_publication(request):
             return HttpResponseRedirect('/research/')
     else:
         form = PubForm()
-    return render_to_response('resources/add_publication.html', {'form': form, 'title': 'publication', 'url_name': '/add_publication/'},
-                              context_instance=RequestContext(request))
+    return render(request, 'resources/add_publication.html', {'form': form, 'title': 'publication', 'url_name': '/add_publication/'})
 
 
 @login_required()
@@ -97,8 +92,7 @@ def add_journal(request):
             return HttpResponseRedirect('/research/')
     else:
         form = JournalForm()
-    return render_to_response('resources/add_resource.html', {'form': form, 'title': 'journal', 'url_name': '/add_journal/'},
-                              context_instance=RequestContext(request))
+    return render(request, 'resources/add_resource.html', {'form': form, 'title': 'journal', 'url_name': '/add_journal/'})
 
 
 @login_required()
@@ -110,5 +104,4 @@ def add_link(request):
             return HttpResponseRedirect('/links/')
     else:
         form = LinkForm()
-    return render_to_response('resources/add_resource.html', {'form': form, 'title': 'link', 'url_name': '/add_link/'},
-                              context_instance=RequestContext(request))
+    return render(request, 'resources/add_resource.html', {'form': form, 'title': 'link', 'url_name': '/add_link/'})

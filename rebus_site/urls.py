@@ -18,12 +18,6 @@ from django.contrib.sites.models import Site
 admin.site.unregister(Site)
 
 
-book_info = {
-    "model": Book,
-    "post_save_redirect": "/add_book/",
-    "login_required": False, #TODO should be true later
-    }
-
 urlpatterns = patterns('',
                        # Home
                        url(r'^$', direct_to_template, {'template':'home.html'}),

@@ -38,7 +38,7 @@
                       <td>{{ pub.title }}</td>
                       <td>{{ pub.author }}</td>
                       <td><a href="{{ pub.link }}">{{ pub.link }}</a></td>
-                      <td>{{ pub.date }}</td>
+                      <td>{{ pub.date|date:"N Y" }}</td>
                      </tr>
                     {% endfor %} 
                   </tbody> 

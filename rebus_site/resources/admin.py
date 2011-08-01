@@ -6,7 +6,7 @@ from resources.models import Link
 from django.contrib import admin
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'link') #TODO Maybe we would like to display picture
+    list_display = ('title', 'author', 'link')
 
 admin.site.register(Book, BookAdmin)
 

@@ -150,6 +150,10 @@ LOGGING = {
 }
 
 ## Extra Settings
+# Default content type for django.shortcuts.render
+DEFAULT_CONTENT_TYPE = 'text/html'
+
+# Module to be used as profile for User
 AUTH_PROFILE_MODULE = 'profilemgr.UserProfile'
 
 # Number of days users will have to activate their accounts after registering
@@ -177,5 +181,5 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 # Map Initialization
 MAP_ZOOM = '2'
-MAP_INIT_LAT = '37.649034'
+MAP_INIT_LAT = '37.649034' # 'Center' of the world
 MAP_INIT_LON = '-27.617187'

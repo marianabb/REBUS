@@ -86,6 +86,10 @@ Sun july 31st
 - Misc missing things: footer, cleaning admin, cleaning app  1.25hr
 - Debug registration 1hr 
 
+Mon Aug 1st
+- Views improvements 0.75hr
+- README + more improvements 0.5hr
+
 
 =======
  TODO:
@@ -95,15 +99,16 @@ Sun july 31st
 - Activation email configuration (site name).
 - (Django-registration) A script 'registration/bin/deleted_expired_users.py', is provided, which is suitable for use as a regular cron job.
 - Jquery-ui smoothness theme css is saved TWICE in static and dataTables
-- Improve README
-- Use better shortcut in views.
+- Real site on README
+
 
 
 ===========
  Questions:
 ===========
-- Is calendar public or only registered users?
 - Server to deploy please.
+
+
 
 
 pwd: BSArebus

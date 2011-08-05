@@ -89,12 +89,18 @@ Sun july 31st
 Mon Aug 1st
 - Views improvements 0.75hr
 - README + more improvements 0.5hr
+- Deploying the proyect on a temporary location 2hr
+- Finishing deployment + details and examples 2hr
+
+Wed Aug 3rd
+- Saving temporary deployment version (just in case) + home texts 11:36 - 
+- Home
 
 
 =======
  TODO:
 =======
-- Check https://docs.djangoproject.com/en/dev/howto/static-files/ to manage static files at deployment phase.
+- Check Https://docs.djangoproject.com/en/dev/howto/static-files/ to manage static files at deployment phase.
 - Admin DOES NOT eliminate media when instances are deleted.
 - Activation email configuration (site name).
 - (Django-registration) A script 'registration/bin/deleted_expired_users.py', is provided, which is suitable for use as a regular cron job.

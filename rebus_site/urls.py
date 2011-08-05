@@ -7,7 +7,6 @@ from registration.views import register
 from profilemgr import regbackend
 from profilemgr.forms import UserProfileForm
 import registration.backends.default.urls as regUrls
-import schedule.urls as schedUrls
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin

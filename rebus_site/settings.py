@@ -11,12 +11,11 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/Users/mariana/Documents/Work/REBUS/rebus_site/rebus.db',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'marianabb_rebusdb',                      # Or path to database file if using sqlite3.
+        'USER': 'marianabb',                      # Not used with sqlite3.
+        'PASSWORD': 'lavaman0s',                  # Not used with sqlite3.
+        'HOST': 'postgresql.alwaysdata.com',                   # Set to empty string for localhost. Not used with sqlite3.
     }
 }
 
@@ -183,3 +182,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 MAP_ZOOM = '2'
 MAP_INIT_LAT = '37.649034' # 'Center' of the world
 MAP_INIT_LON = '-27.617187'
+
+
+# Local Settings (if available)
+try:
+    from local_settings import *
+except ImportError:
+    pass

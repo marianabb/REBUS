@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
+from django.forms import ModelForm
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
@@ -15,3 +16,10 @@ class UserProfile(models.Model):
     
     def __unicode__(self):
         return self.user.get_full_name() or self.user.username
+
+
+## Form based on the peviously defined model ##
+
+class UserProfileForm(ModelForm):
+    class Meta:
+        model = UserProfile

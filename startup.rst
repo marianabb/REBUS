@@ -1,6 +1,6 @@
-* easy_install virtualenv
+* sudo easy_install virtualenv
 
-* easy_install virtualenvwrapper
+* sudo easy_install virtualenvwrapper
 
 * Add some lines to .bash_login.sh according to http://www.doughellmann.com/docs/virtualenvwrapper/install.html
 

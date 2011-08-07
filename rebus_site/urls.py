@@ -33,6 +33,7 @@ urlpatterns = patterns('',
                        url(r'^add_publication/$', 'rebus_site.resources.views.add_publication', name='add_publication'),
                        url(r'^add_journal/$', 'rebus_site.resources.views.add_journal', name='add_journal'),
                        url(r'^add_link/$', 'rebus_site.resources.views.add_link', name='add_link'),
+                       url(r'^add_course/$', 'rebus_site.courses.views.add_course', name='add_course'),
 
                        # Django-registration
                        url(r'^accounts/register/$', register, {'backend': 'registration.backends.default.DefaultBackend','form_class': UserProfileForm}, name='registration_register'),

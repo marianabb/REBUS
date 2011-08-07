@@ -1,4 +1,4 @@
-Sat july 2nd
+yYSat july 2nd
 - Looking for templates 1hr
 
 Thu july 7th
@@ -93,8 +93,17 @@ Mon Aug 1st
 - Finishing deployment + details and examples 2hr
 
 Wed Aug 3rd
-- Saving temporary deployment version (just in case) + home texts 11:36 - 
-- Home
+- Saving temporary deployment version (just in case) + home texts 1hr
+
+Sun Aug 7nd
+- Creating environment in new computer 0.5hr
+- Beginning add_course 1hr
+- add_course only selecting school 1.75hr
+- add_course with new school 9:15 - 
+
+
+
+
 
 
 =======

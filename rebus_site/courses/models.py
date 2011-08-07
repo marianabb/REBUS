@@ -1,5 +1,6 @@
 from django.db import models
 from profilemgr.models import UserProfile
+from django.forms import ModelForm
 
 class School(models.Model):
     name = models.CharField(max_length=100)
@@ -39,4 +40,3 @@ class Course(models.Model):
 
     def __unicode__(self):
         return self.name
-

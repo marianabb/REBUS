@@ -95,14 +95,16 @@ Mon Aug 1st
 Wed Aug 3rd
 - Saving temporary deployment version (just in case) + home texts 1hr
 
-Sun Aug 7nd
+Sun Aug 7th
 - Creating environment in new computer 0.5hr
 - Beginning add_course 1hr
 - add_course only selecting school 1.75hr
-- add_course with new school 9:15 - 
+- add_course with new school. Working but missing some details 1.75hr
 
 
-
+Mon Aug 8th
+- Details of add_course 2hr
+- More add_course 9:30 - 10:22, 10:32 - 
 
 
 

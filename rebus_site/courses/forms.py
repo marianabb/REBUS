@@ -6,10 +6,13 @@ from profilemgr.models import UserProfile
 
 
 class LayoutCourseForm(forms.Form):
-    name = forms.CharField(label="Name", required=True, widget=forms.TextInput(), max_length=100)
+    name = forms.CharField(label="Name", required=True,
+                           widget=forms.TextInput(), max_length=100)
     url = forms.URLField(label="Url", required=False)
-    description = forms.CharField(label="Description", required=False, widget=forms.Textarea())
-    language = forms.CharField(label="Language", required=True, widget=forms.TextInput(), max_length=30)
+    description = forms.CharField(label="Description", required=False, 
+                                  widget=forms.Textarea())
+    language = forms.CharField(label="Language", required=True, 
+                               widget=forms.TextInput(), max_length=30)
     LEVEL_CHOICES = (
         (u'', u'Select'),
         (u'bg', u'Beginner'),
@@ -26,8 +29,12 @@ class LayoutCourseForm(forms.Form):
         )
     type = forms.ChoiceField(label="Type", required=True, choices=TYPE_CHOICES)
     
-    school = forms.ModelChoiceField(label="School", required=False, empty_label="Select", queryset=School.objects.all())   
-    lecturer = forms.ModelChoiceField(label="Lecturer", required=True, empty_label="Select", queryset=UserProfile.objects.all())
+    school = forms.ModelChoiceField(label="School", required=False, empty_label="Select", queryset=School.objects.all()) 
+
+    # Only include actual lecturers with name and last name. Exclude admin users.
+    lecturer = forms.ModelChoiceField(label="Lecturer", required=True, 
+                                      empty_label="Select", 
+                                      queryset=UserProfile.objects.exclude(user__first_name="", user__last_name=""))
 
     # Field for a possible new school
     school_name = forms.CharField(label="School name*", required=False, widget=forms.TextInput(), max_length=100)
@@ -41,10 +48,14 @@ class LayoutCourseForm(forms.Form):
 
     def clean(self):
         cleaned_data = self.cleaned_data
-        
-        if cleaned_data['school']:
-            pass
-        else:
+
+        if not cleaned_data['school']:
+            msg = u"This field is required"
+
+            # Check the already existent school field
+            self.errors['school'] = self.error_class([msg])
+
+            # Check the new school fields
             s_name = cleaned_data.get('school_name')
             s_url = cleaned_data.get('school_url')
             s_city = cleaned_data.get('school_city')
@@ -54,7 +65,6 @@ class LayoutCourseForm(forms.Form):
                 pass
             else:
                 # Something is missing
-                msg = u"This field is required."
                 if not s_name:
                     self._errors['school_name'] = self.error_class([msg])
                     del cleaned_data['school_name']
@@ -114,7 +124,7 @@ class LayoutCourseForm(forms.Form):
 
             Fieldset('Choose a School or create a new one',
                      HTML('<div id="choose">'),
-                     Row('school', HTML('<a id="new" href="#">Add a new School</a>')),
+                     Row('school', HTML('<input type="button" id="new" onclick="click_new()" value="Add a new school"/>')),
                      HTML('</div>'),
                      
                      HTML('<div id="create">'),
@@ -125,7 +135,7 @@ class LayoutCourseForm(forms.Form):
                      'school_address',
                      'school_city',
                      'school_country',
-                     HTML('<a id="old" href="#">Choose an already existent school</a>'),
+                     HTML('<input type="button" id="old" onclick="click_old()" value="Choose an already existent school"/>'),
                      HTML('</div>'),
                      ),
 
@@ -149,5 +159,7 @@ class LayoutCourseForm(forms.Form):
         submit = Submit('submit','Save')
         helper.add_input(submit)
         helper.form_method = 'POST'
+        helper.form_id = 'my_form'
+        #helper.form_action = "/add_course/?status='old'"
 
         return helper

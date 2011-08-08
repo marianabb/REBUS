@@ -24,4 +24,6 @@ def add_course(request):
             return HttpResponseRedirect('/courses/')
     else:
         form = LayoutCourseForm()
-    return render(request, 'courses/add_course.html', {'form': form, 'title': 'course', 'url_name': '/add_course/'})
+    
+    status = request.GET.get('status', 'old')
+    return render(request, 'courses/add_course.html', {'form': form, 'title': 'course', 'url_name': '/add_course/', 'status': status})

@@ -48,35 +48,47 @@ class LayoutCourseForm(forms.Form):
 
     def clean(self):
         cleaned_data = self.cleaned_data
+        msg = u"This field is required"
 
-        if not cleaned_data['school']:
-            msg = u"This field is required"
+        # Check the already existent school field
+        school = cleaned_data.get('school')
 
-            # Check the already existent school field
-            self.errors['school'] = self.error_class([msg])
+        # Check the new school fields
+        s_name = cleaned_data.get('school_name')
+        s_url = cleaned_data.get('school_url')
+        s_email = cleaned_data.get('school_email')
+        s_phone = cleaned_data.get('school_phone')
+        s_address = cleaned_data.get('school_address')
+        s_city = cleaned_data.get('school_city')
+        s_country = cleaned_data.get('school_country')
 
-            # Check the new school fields
-            s_name = cleaned_data.get('school_name')
-            s_url = cleaned_data.get('school_url')
-            s_city = cleaned_data.get('school_city')
-            s_country = cleaned_data.get('school_country')
-            if s_name and s_url and s_city and s_country:
+        # If an old school was selected, just continue
+        if school:
+            pass
+        # If not, check the new school fields
+        elif s_name or s_url or s_email or s_phone or s_address or s_city or s_country:
+            # If one of them is full, check the mandatory ones
+             if s_name and s_url and s_city and s_country:
                 # Everything is fine
                 pass
-            else:
-                # Something is missing
-                if not s_name:
-                    self._errors['school_name'] = self.error_class([msg])
-                    del cleaned_data['school_name']
-                if not s_url:
-                    self._errors['school_url'] = self.error_class([msg])
-                    del cleaned_data['school_url']
-                if not s_city:
-                    self._errors['school_city'] = self.error_class([msg])
-                    del cleaned_data['school_city']
-                if not s_country:
-                    self._errors['school_country'] = self.error_class([msg])
-                    del cleaned_data['school_country']
+             else:
+                 # Something is missing
+                 if not s_name:
+                     self._errors['school_name'] = self.error_class([msg])
+                     del cleaned_data['school_name']
+                 if not s_url:
+                     self._errors['school_url'] = self.error_class([msg])
+                     del cleaned_data['school_url']
+                 if not s_city:
+                     self._errors['school_city'] = self.error_class([msg])
+                     del cleaned_data['school_city']
+                 if not s_country:
+                     self._errors['school_country'] = self.error_class([msg])
+                     del cleaned_data['school_country']                    
+
+        # Otherwise, an old school must be chosen
+        else:
+            self.errors['school'] = self.error_class([msg])
                     
         return cleaned_data
     

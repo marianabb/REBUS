@@ -11,9 +11,11 @@
   $(document).ready( function() {
 
 {% if status == "old" %}
+     $('#my_form').attr("action","/add_course/?status=old");
      $('#create').hide();
      $('#choose').show();
 {% else %}
+     $('#my_form').attr("action","/add_course/?status=new");
      $('#choose').hide();
      $('#create').show();
 {% endif %}

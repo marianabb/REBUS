@@ -104,8 +104,13 @@ Sun Aug 7th
 
 Mon Aug 8th
 - Details of add_course 2hr
-- More add_course 9:30 - 10:22, 10:32 - 
+- More add_course 1.5hr
 
+Thu Aug 11th
+- add_course tests 0.5hr
+
+Fri Aug 12th
+- add_course issues 1hr
 
 
 =======
@@ -114,7 +119,7 @@ Mon Aug 8th
 - Check Https://docs.djangoproject.com/en/dev/howto/static-files/ to manage static files at deployment phase.
 - Admin DOES NOT eliminate media when instances are deleted.
 - Activation email configuration (site name).
-- (Django-registration) A script 'registration/bin/deleted_expired_users.py', is provided, which is suitable for use as a regular cron job.
+  - (Django-registration) A script 'registration/bin/deleted_expired_users.py', is provided, which is suitable for use as a regular cron job.
 - Jquery-ui smoothness theme css is saved TWICE in static and dataTables
 - Real site on README
 

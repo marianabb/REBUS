@@ -126,7 +126,9 @@ Sat Aug 13th
 66.25
 
 Tue Aug 16th
-- add_location 2:00 - 2:15
+- add_location + upload to server 0.75hr
+- Install PIL + easy_thumbnails research 2:39 - 3:49
+- thumbnail management 5:54 -  
 
 
 

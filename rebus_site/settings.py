@@ -117,6 +117,7 @@ INSTALLED_APPS = (
 
     'uni_form',
     'registration',
+    'easy_thumbnails',
 
     'rebus_site.profilemgr',
     'rebus_site.courses',
@@ -182,6 +183,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 MAP_ZOOM = '2'
 MAP_INIT_LAT = '37.649034' # 'Center' of the world
 MAP_INIT_LON = '-27.617187'
+
+# Easy_Thumbnails
+THUMBNAIL_DEBUG = False
+THUMBNAIL_QUALITY = 80
 
 
 # Local Settings (if available)

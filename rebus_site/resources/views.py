@@ -13,7 +13,7 @@ def e_resources(request):
     book_columns = ['Image', 'Title', 'Author', 'Link']
     exercise_columns = ['Title', 'Author', 'Type', 'Link']
 
-    all_books = Book.objects.all().order_by('title') #TODO the picture MUST be shown as thumbnail size!
+    all_books = Book.objects.all().order_by('title')
     all_exercises = ExerciseMaterial.objects.all().order_by('title')
     
     return render(request, 'resources/eresources.html', {'books': all_books, 
@@ -49,9 +49,6 @@ def add_book(request):
     if request.method == 'POST':
         form = BookForm(request.POST, request.FILES)
         if form.is_valid():
-            if request.FILES:
-                path = settings.MEDIA_ROOT + 'books/'
-                default_storage.save(path, request.FILES['picture'])
             form.save()
             return HttpResponseRedirect('/eresources/')
     else:

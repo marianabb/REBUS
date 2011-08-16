@@ -1,11 +1,13 @@
 from django.db import models
 from django.forms import ModelForm
+from easy_thumbnails.fields import ThumbnailerImageField
 
 ## Educational Resources
 class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
-    picture = models.FileField(upload_to="books", blank=True, null=True) # TODO change to image, change filename perhaps
+    # The directory 'books' in the media folder must exist
+    picture = ThumbnailerImageField(upload_to="books", blank=True, null=True, resize_source=dict(size=(100,100), sharpen=True))
     link = models.URLField(verify_exists=False, blank=True, null=True)
 
     def __unicode__(self):

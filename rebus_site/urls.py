@@ -50,6 +50,7 @@ urlpatterns = patterns('',
 
                        # Map
                        url(r'^map/', 'rebus_site.locations.views.show_map'),
+                       url(r'^add_location/$', 'rebus_site.locations.views.add_location', name='add_location'),
 
                        # Uncomment the admin/doc line below to enable admin documentation:
                            url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

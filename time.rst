@@ -29,6 +29,7 @@ Mon july 18th
 Tue july 19th
 - Reading + investigating about DataTables 0.25hr
 - Adding JQuery and DataTables plugin to the project 0.5hr
+14
 
 Wed july 20th
 - Initial Table of courses 1.5hr
@@ -53,6 +54,8 @@ Sun july 24th
 - Add Publications and journals 0.5hr
 - Add links 0.25hr
 - Reading about user registration + first attempts 2hr
+26.25
+
 
 Mon july 25th
 - More user registration. Templates for profiles and registration 0.5hr
@@ -62,6 +65,7 @@ Mon july 25th
 - Registration, login pages for adding resources 1hr
 - Login/logout pages and details 1.75hr
 - Thinking about calendar. First attempts with django-schedule 0.75hr
+35.25
 
 Tue july 26th
 - More tests with django-schedule, finding JQuery tools 1hr
@@ -69,6 +73,7 @@ Tue july 26th
 - Fullcalendar working with google calendar, not customizable yet 1.5hr
 - Mail with progress report for Ivan and Daniela 1hr
 - Calendar tests. Event detail 1.75hr
+40
 
 Wed july 27th
 - Some details (string management, ReBuS, links on publications not mandatory) 0.5hr
@@ -81,6 +86,7 @@ Thu july 28th
 
 Fri july 29th
 - More map details. Info windows and zoom for tags. 2.5hr
+48
 
 Sun july 31st
 - Misc missing things: footer, cleaning admin, cleaning app  1.25hr
@@ -91,6 +97,7 @@ Mon Aug 1st
 - README + more improvements 0.5hr
 - Deploying the proyect on a temporary location 2hr
 - Finishing deployment + details and examples 2hr
+55.5
 
 Wed Aug 3rd
 - Saving temporary deployment version (just in case) + home texts 1hr
@@ -101,16 +108,26 @@ Sun Aug 7th
 - add_course only selecting school 1.75hr
 - add_course with new school. Working but missing some details 1.75hr
 
+60.5
 
 Mon Aug 8th
 - Details of add_course 2hr
 - More add_course 1.5hr
+64
 
 Thu Aug 11th
 - add_course tests 0.5hr
 
 Fri Aug 12th
 - add_course issues 1hr
+
+Sat Aug 13th
+- Upload add_course to server 0.75hr
+66.25
+
+Tue Aug 16th
+- add_location 2:00 - 2:15
+
 
 
 =======
@@ -119,7 +136,7 @@ Fri Aug 12th
 - Check Https://docs.djangoproject.com/en/dev/howto/static-files/ to manage static files at deployment phase.
 - Admin DOES NOT eliminate media when instances are deleted.
 - Activation email configuration (site name).
-  - (Django-registration) A script 'registration/bin/deleted_expired_users.py', is provided, which is suitable for use as a regular cron job.
+- (Django-registration) A script 'registration/bin/deleted_expired_users.py', is provided, which is suitable for use as a regular cron job.
 - Jquery-ui smoothness theme css is saved TWICE in static and dataTables
 - Real site on README
 

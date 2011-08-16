@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 
 
 class Location(models.Model):
@@ -9,3 +10,9 @@ class Location(models.Model):
     def __unicode__(self):
         return self.name
 
+
+## Form based on the model ##
+
+class LocationForm(ModelForm):
+    class Meta:
+        model = Location

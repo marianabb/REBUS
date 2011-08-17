@@ -51,7 +51,9 @@
 		            </tr> 
 	              </tfoot> 
                 </table>
-                {% if not request.user.is_authenticated %}
+                {% if request.user.is_authenticated %}
+              <p><a href="/accounts/update/">Update your profile.</p>
+              {% else %}
               <p>Please <a href="/accounts/register/">register</a> if you would like to be on the list.</p>                
               {% endif %}
 			</div>

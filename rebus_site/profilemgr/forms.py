@@ -11,3 +11,14 @@ class UserProfileForm(RegistrationForm):
     city = forms.CharField(max_length=15)
     country = forms.CharField(max_length=15)
     image = forms.FileField(required=False)
+
+
+    def clean(self):
+        cleaned_data = self.cleaned_data
+        
+        # Only make changes if the profile is being updated
+        import ipdb; ipdb.set_trace()
+        if request.path == '/accounts/update':
+           pass 
+
+        return cleaned_data

@@ -131,7 +131,8 @@ Tue Aug 16th
 - thumbnail management 1.25hr
 
 Web Aug 17th
-- Our community begins 1:29 - 
+- Our community begins, basic table 1hr
+- Our community, changing your profile 10:48 - 
 
 
 

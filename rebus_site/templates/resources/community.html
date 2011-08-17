@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}- Community {% endblock %}
+
+{% block scripts %}
+<style type="text/css" title="currentStyle"> 
+  @import "{% get_static_prefix %}js/dataTables/css/demo_page.css";
+  @import "{% get_static_prefix %}js/dataTables/css/demo_table_jui.css";
+  @import "{% get_static_prefix %}js/dataTables/themes/smoothness/jquery-ui-1.8.4.custom.css";
+</style> 
+<script src="{% get_static_prefix %}js/dataTables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+  oTable = $('#community').dataTable({
+  "bJQueryUI": true,
+  "sPaginationType": "full_numbers"
+  });
+  });
+</script>
+{% endblock %}
+
+{% block content %}      
+		<div class="post">
+			<h1 class="title">Our Community</h1>            
+            <p class="byline">&nbsp;</p>
+			<div class="demo_jui">
+			  <!--p-->
+                <table cellpadding="0" cellspacing="0" border="0" class="display" id="community"> 
+	              <thead> 
+		            <tr> 
+                      {% for column in columns %}
+			          <th>{{ column }}</th>
+                      {% endfor %}
+		            </tr> 
+	              </thead> 
+	              <tbody> 
+                    {% for p in people %}
+                    <tr class="gradeA">
+                      <td><img src=" {{ p.image.url }} "></img></td>
+                      <td>{{ p.user.first_name }} {{ p.user.last_name }}</td>
+                      <td><a href=mailto:"{{ p.user.email }}">{{ p.user.email }}</a></td>
+                      <td>{{ p.city }}, {{ p.country }}</td>
+                    </tr>
+                    {% endfor %}
+                  </tbody> 
+	              <tfoot> 
+		            <tr> 
+                      {% for column in columns %}
+			          <th>{{ column }}</th>
+                      {% endfor %}
+		            </tr> 
+	              </tfoot> 
+                </table>       
+                <p>Please <a href="/accounts/register/">register</a> if you would like to be on the list.</p>
+			</div>
+		</div>
+{% endblock %}

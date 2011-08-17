@@ -6,6 +6,7 @@ from resources.models import BookForm, ExerciseForm, PubForm, JournalForm, LinkF
 from django.template import RequestContext
 from django.core.files.storage import default_storage
 from django.contrib.auth.decorators import login_required
+from profilemgr.models import UserProfile
 
 
 ## Display views ##
@@ -41,6 +42,16 @@ def links(request):
     
     return render(request, 'resources/links.html', {'links': all_links, 
                                                        'columns': columns})
+
+def community(request):
+    columns = ['Picture', 'Name', 'Email', 'Location']
+
+    # Only show active users with first_name and last_name
+    all_people = UserProfile.objects.all().exclude(user__is_active=False).exclude(user__first_name="", 
+                                                                                  user__last_name="").order_by('user__first_name')
+
+    return render(request, 'resources/community.html', {'people': all_people, 'columns': columns})
+
 
 
 ## Update views ##

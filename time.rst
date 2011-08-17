@@ -127,8 +127,11 @@ Sat Aug 13th
 
 Tue Aug 16th
 - add_location + upload to server 0.75hr
-- Install PIL + easy_thumbnails research 2:39 - 3:49
-- thumbnail management 5:54 -  
+- Install PIL + easy_thumbnails research 1.25hr
+- thumbnail management 1.25hr
+
+Web Aug 17th
+- Our community begins 1:29 - 
 
 
 

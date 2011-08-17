@@ -26,6 +26,7 @@ urlpatterns = patterns('',
                        url(r'^eresources/$', 'rebus_site.resources.views.e_resources'),
                        url(r'^research/$', 'rebus_site.resources.views.research'),
                        url(r'^links/$', 'rebus_site.resources.views.links'),
+                       url(r'^community/$', 'rebus_site.resources.views.community'),
 
                        # Update views
                        url(r'^add_book/$', 'rebus_site.resources.views.add_book', name='add_book'),

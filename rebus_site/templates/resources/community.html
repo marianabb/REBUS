@@ -50,8 +50,10 @@
                       {% endfor %}
 		            </tr> 
 	              </tfoot> 
-                </table>       
-                <p>Please <a href="/accounts/register/">register</a> if you would like to be on the list.</p>
+                </table>
+                {% if not request.user.is_authenticated %}
+              <p>Please <a href="/accounts/register/">register</a> if you would like to be on the list.</p>                
+              {% endif %}
 			</div>
 		</div>
 {% endblock %}

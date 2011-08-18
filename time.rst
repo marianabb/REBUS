@@ -137,7 +137,7 @@ Web Aug 17th
 Thu Aug 18th
 - Changing profile, fixing 2.25hr
 - Changing profile, image update 1.75hr
-
+- Design 1hr
 
 
 =======
@@ -156,9 +156,4 @@ Thu Aug 18th
  Questions:
 ===========
 - Server to deploy please.
-
-
-
-
-pwd: BSArebus
 

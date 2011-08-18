@@ -55,7 +55,7 @@ Released   : 20090411
                   <li><a href="/research">Research Resources</a></li>
                   <li><a href="/links">Useful Links</a></li>
                   {% if request.user.is_authenticated %}
-                  <li><a href="/accounts/logout/">Logout</a></li>
+                  <li><a href="/accounts/logout/">Logout ({{ request.user.username }})</a></li>
                   {% else %}
                   <li><a href="/accounts/login/">Login</a></li>
                   {% endif %}

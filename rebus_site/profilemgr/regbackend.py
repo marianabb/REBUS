@@ -3,10 +3,7 @@ from rebus_site.profilemgr.models import UserProfile
 
 def user_created(sender, user, request, **kwargs):
     UserProfile.objects.create(user=user)
-    save_profile(user, request)
 
-
-def save_profile(user, request):
     user.first_name = request.POST.get('first_name', None)
     user.last_name = request.POST.get('last_name', None)
     profile = user.get_profile()
@@ -18,7 +15,6 @@ def save_profile(user, request):
     profile.image = request.FILES.get('image', None)
     user.save()
     profile.save()
-
 
 
 from registration.signals import user_registered

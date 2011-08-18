@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load uni_form_tags %}
-{% uni_form form form.helper %}
 {% block title %}- Update Profile {% endblock %}
 
 {% block scripts %}
@@ -11,15 +10,13 @@
 {% endblock %}
 
 {% block content %} 
-<div class="post">
+<div class="post" style="">
   <h1 class="title">Update your ReBuS profile</h1>            
   <p class="byline">&nbsp;</p>
-  <p>
-    <form action="{{ url_name }}" method="post" enctype="multipart/form-data" class="uniForm">
+    <!--form action="{{ url_name }}" method="post" enctype="multipart/form-data" class="uniForm"-->
       {% csrf_token %}
-      {{ form|as_uni_form }}
-      <p><input type="submit" value="Update" /></p>
-    </form>
-    </p>
+      {% uni_form form form.helper %}
+      <!--p><input type="submit" value="Update" /></p-->
+    <!--/form-->
 </div>
 {% endblock %}

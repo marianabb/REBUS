@@ -36,7 +36,11 @@
 	              <tbody> 
                     {% for p in people %}
                     <tr class="gradeA">
+                      {% if p.image %}
                       <td><img src=" {{ p.image.url }} "></img></td>
+                      {% else %}
+                      <td>No picture available</td>
+                      {% endif %}
                       <td>{{ p.user.first_name }} {{ p.user.last_name }}</td>
                       <td><a href=mailto:"{{ p.user.email }}">{{ p.user.email }}</a></td>
                       <td>{{ p.city }}, {{ p.country }}</td>
@@ -54,7 +58,7 @@
                 {% if request.user.is_authenticated %}
               <p><a href="/accounts/update/">Update your profile.</p>
               {% else %}
-              <p>Please <a href="/accounts/register/">register</a> if you would like to be on the list.</p>                
+              <p><a href="/accounts/update/">Update</a> your profile or <a href="/accounts/register/">register</a> if you would like to be on the list.</p>                
               {% endif %}
 			</div>
 		</div>

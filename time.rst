@@ -132,7 +132,11 @@ Tue Aug 16th
 
 Web Aug 17th
 - Our community begins, basic table 1hr
-- Our community, changing your profile 10:48 - 
+- Our community, changing your profile 2hr
+
+Thu Aug 18th
+- Changing profile, fixing 2.25hr
+- Changing profile, image update 1.75hr
 
 
 

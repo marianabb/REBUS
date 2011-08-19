@@ -156,12 +156,12 @@ hr {
 }
 
 .meta .more {
-	background: url(/static/images/img03.gif) no-repeat 0px 45%;
+	background: url(/static/images/menu.gif) no-repeat 0px 45%;
 	padding-left: 10px;
 }
 
 .meta .comments {
-	background: url(/static/images/img03.gif) no-repeat 0px 45%;
+	background: url(/static/images/menu.gif) no-repeat 0px 45%;
 	padding-left: 10px;
 }
 .meta a {
@@ -238,14 +238,14 @@ hr {
 	margin: 0;
 	height: 35px;
 	padding: 8px 0px 10px 13px;
-	background: url(/static/images/img03.gif) no-repeat left top;
+	background: url(/static/images/menu.gif) no-repeat left top;
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 18px;
     color: #B1AD95
 }
 
 #sidebar h2 a {
-	background: url(/static/images/img03.gif) no-repeat left 50%;
+	background: url(/static/images/menu.gif) no-repeat left 50%;
 }
 
 #sidebar a {

@@ -1,4 +1,4 @@
-yYSat july 2nd
+Sat july 2nd
 - Looking for templates 1hr
 
 Thu july 7th
@@ -137,7 +137,10 @@ Web Aug 17th
 Thu Aug 18th
 - Changing profile, fixing 2.25hr
 - Changing profile, image update 1.75hr
-- Design 1hr
+- Design details 1hr
+
+Fri Aug 19th
+- Design details. Menu image 1.5hr
 
 
 =======

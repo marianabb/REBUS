@@ -37,7 +37,7 @@
                     <tr class="gradeA">
                       <td>{{ pub.title }}</td>
                       <td>{{ pub.author }}</td>
-                      <td><a href="{{ pub.link }}">{{ pub.link }}</a></td>
+                      <td>{{ pub.link|urlizetrunc:25 }}</td>
                       <td>{{ pub.date|date:"N Y" }}</td>
                      </tr>
                     {% endfor %} 
@@ -71,7 +71,7 @@
                 {% for jour in journals %}
                 <tr class="gradeA">
                   <td>{{ jour.title }}</td>
-                  <td><a href="{{ jour.link }}">{{ jour.link }}</a></td>
+                  <td>{{ jour.link|urlizetrunc:40 }}</td>
                 </tr>
                 {% endfor %} 
               </tbody> 

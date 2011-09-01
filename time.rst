@@ -142,6 +142,9 @@ Thu Aug 18th
 Fri Aug 19th
 - Design details. Menu image 1.5hr
 
+Thu Sep 1st
+- gitignore, cut links 0.5hr
+
 
 =======
  TODO:

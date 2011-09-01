@@ -38,7 +38,7 @@
                     <tr class="gradeA">
                       <td>{{ link.name }}</td>
                       <td>{{ link.description }}</td>
-                      <td><a href="{{ link.link }}">{{ link.link }}</a></td>
+                      <td>{{ link.link|urlizetrunc:40 }}</td>
                     </tr>
                     {% endfor %} 
                   </tbody> 

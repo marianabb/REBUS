@@ -43,7 +43,7 @@
                       {% endif %}
                       <td>{{ book.title }}</td>
                       <td>{{ book.author }}</td>
-                      <td><a href="{{ book.link }}">{{ book.link }}</a></td>
+                      <td>{{ book.link|urlizetrunc:30 }}</td>
                      </tr>
                     {% endfor %} 
                   </tbody> 
@@ -78,7 +78,7 @@
                   <td>{{ ex.title }}</td>
                   <td>{{ ex.author }}</td>
                   <td>{{ ex.get_type_display }}</td>
-                  <td><a href="{{ ex.link }}">{{ ex.link }}</a></td>
+                  <td>{{ ex.link|urlizetrunc:25 }}</td>
                 </tr>
                 {% endfor %} 
               </tbody> 

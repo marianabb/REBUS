@@ -35,7 +35,7 @@
 	              </thead> 
 	              <tbody> 
                     {% for book in books %}
-                    <tr class="gradeA">
+                    <tr class="gradeU">
                       {% if book.picture %}
                       <td><img src=" {{ book.picture.url }}"></img></td>
                       {% else %}
@@ -74,7 +74,7 @@
 	          </thead> 
 	          <tbody> 
                 {% for ex in exercises %}
-                <tr class="gradeA">
+                <tr class="gradeU">
                   <td>{{ ex.title }}</td>
                   <td>{{ ex.author }}</td>
                   <td>{{ ex.get_type_display }}</td>

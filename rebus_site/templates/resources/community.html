@@ -35,14 +35,14 @@
 	              </thead> 
 	              <tbody> 
                     {% for p in people %}
-                    <tr class="gradeA">
+                    <tr class="gradeU">
                       {% if p.image %}
                       <td><img src=" {{ p.image.url }} "></img></td>
                       {% else %}
                       <td>No picture available</td>
                       {% endif %}
                       <td>{{ p.user.first_name }} {{ p.user.last_name }}</td>
-                      <td><a href=mailto:"{{ p.user.email }}">{{ p.user.email }}</a></td>
+                      <td><a href="mailto:{{ p.user.email }}">{{ p.user.email }}</a></td>
                       <td>{{ p.city }}, {{ p.country }}</td>
                     </tr>
                     {% endfor %}

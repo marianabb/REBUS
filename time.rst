@@ -145,6 +145,8 @@ Fri Aug 19th
 Thu Sep 1st
 - gitignore, cut links 0.5hr
 
+Sat Sep 3rd
+- Design changes, UU colors 6hr
 
 =======
  TODO:

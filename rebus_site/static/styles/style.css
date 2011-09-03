@@ -11,10 +11,10 @@ Author URI: http://www.freewpthemes.net/
 body {
 	margin: 0;
 	padding: 0;
-    background: #696239 url(/static/images/img01.gif) repeat-x left top;
+    background: #EAEAEA url(/static/images/img01_UU_red.gif) repeat-x left top;
 	font-size: 13px;
 	text-align: justify;
-	color: #5C5116;
+	color: #000000; /* Content fonts */
 }
 
 body, th, td, input, textarea, select, option {
@@ -24,7 +24,7 @@ body, th, td, input, textarea, select, option {
 h1, h2, h3 {
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: normal;
-	color: #819CDB;
+	color: #990000;
 }
 
 h1 {
@@ -53,7 +53,7 @@ blockquote p, blockquote ul, blockquote ol {
 }
 
 a {
-	color: #413C20;
+	color: #990000;
 }
 
 a:hover {
@@ -63,13 +63,21 @@ hr {
 	display: none;
 }
 
+#logo {
+    width: 160px;
+    height: 160px;
+    background: url(/static/images/uulogo_grey.gif) no-repeat;
+    float: left;
+    margin: 20px 0px 0px 370px;
+}
+
 /* Header */
 
 #header {
-	width: 900px;
+	width: 767px;
 	height: 300px;
-	margin: 0 auto;
-	background: url(/static/images/desks_all.jpg) no-repeat left top;
+	margin: 0px 0px 0px 580px; /* Position of header image */
+	background: url(/static/images/desks_shadow.jpg) no-repeat left top;
 }
 
 #header h1, #header p {
@@ -79,10 +87,11 @@ hr {
 }
 
 #header h1 {
-	color: #FFFFFF;
+	color: #990000;
     font-style: italic;
 	font-size: 76px;
-	padding: 229px 10px 0px 400px;
+    text-shadow: 4px 0px 2px #FFFFFF;
+	padding: 200px 790px 0px 400px; /* Position of ReBuS 229 */
 }
 
 #header p {
@@ -92,7 +101,7 @@ hr {
 
 #header a {
 	text-decoration: none;
-	color: #FFB71C;
+	color: #990000;
 }
 
 /* Page */
@@ -103,14 +112,24 @@ hr {
 }
 
 /* Content */
+#wrapper {
+    float: right;
+    width: 737px;
+    height: 548px;
+    margin-top:-16px;
+    margin-bottom:30px;
+    background: url(/static/images/shadow.jpg) repeat-y right top;
+    padding: 5px 10px 10px 5px;
+}
+
 
 #content {
 	float: right;
 	width: 700px;
-	margin-top: -16px;
+	margin-top: 0px;
 	margin-bottom: 30px;
 	padding: 30px 20px;
-	background: #EBEBEB;
+    background: #EAEAEA;
 	border: 10px solid #FFFFFF;
 }
 
@@ -122,10 +141,10 @@ hr {
 	margin: 0;
 	padding-bottom: 5px;
 	padding-left: 30px;
-	background: url(/static/images/img05.gif) no-repeat 0px 2px;
+	background: url(/static/images/img05_light_UU.gif) no-repeat 0px 2px;
 	font-size: 24px;
 	font-family: Georgia, "Times New Roman", Times, serif;
-	color: #3B3513;
+	color: #990000;
 }
 
 .title a {
@@ -149,19 +168,19 @@ hr {
 	color: #646464;
 	padding: 10px 10px;
 	margin: 30px 0;
-	background: url(/static/images/img02.jpg) repeat-x left top;
+	background: url(/static/images/img02_UU_solid.gif) repeat-x left top;
 	text-transform: uppercase;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10px;
 }
 
 .meta .more {
-	background: url(/static/images/menu.gif) no-repeat 0px 45%;
+	background: url(/static/images/menu_UU.gif) no-repeat 0px 45%;
 	padding-left: 10px;
 }
 
 .meta .comments {
-	background: url(/static/images/menu.gif) no-repeat 0px 45%;
+	background: url(/static/images/menu_UU.gif) no-repeat 0px 45%;
 	padding-left: 10px;
 }
 .meta a {
@@ -212,8 +231,8 @@ hr {
 #sidebar {
 	float: left;
 	width: 250px;
-	padding-top: 0px;
-	color: #827736;
+	padding-top: 15px;
+	color: #990000;
 }
 
 #sidebar ul {
@@ -230,31 +249,32 @@ hr {
 }
 
 #sidebar li li {
-    border-bottom: 1px dotted #B1AD95;
+    border-bottom: 1px dotted #993C3C;
 	padding: 5px 0px;
 }
 
 #sidebar h2 {
 	margin: 0;
 	height: 35px;
-	padding: 8px 0px 10px 13px;
-	background: url(/static/images/menu.gif) no-repeat left top;
+	padding: 18px 0px 0px 13px;
+	background: url(/static/images/menu_UU.gif) no-repeat left bottom;
 	font-family: Georgia, "Times New Roman", Times, serif;
-	font-size: 18px;
-    color: #B1AD95
+	font-size: 18px;   
+    color: #990000 /* Menu word */
 }
 
 #sidebar h2 a {
-	background: url(/static/images/menu.gif) no-repeat left 50%;
+	background: url(/static/images/menu_UU.gif) no-repeat left 50%;
 }
 
 #sidebar a {
 	text-decoration: none;
-	color: #E5DDAD;
+    font-weight: bold;
+	color: #990000;
 }
 
 #sidebar a:hover {
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 /* Search */
@@ -268,7 +288,7 @@ hr {
 	width: 230px;
 	padding: 2px 5px;
 	border: 1px solid #3DD1FF;
-	background: #FFFFFF url(/static/images/img05.gif) repeat-x;
+	background: #FFFFFF url(/static/images/img05_light_UU.gif) repeat-x;
 }
 
 #search br {
@@ -310,11 +330,11 @@ hr {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	background: url(/static/images/img02.gif) repeat-x left top;
+	background: url(/static/images/img02_UU_solid.gif) repeat-x left top;
 	text-align: center;
 	font-size: smaller;
 	font-family: Arial, Helvetica, sans-serif;
-	color: #B1A356;
+	color: #990000;
 }
 
 #footer p {
@@ -324,6 +344,6 @@ hr {
 }
 
 #footer p a {
-	color: #FFFFFF;
+	color: #993C3C;
 }
 

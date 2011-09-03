@@ -25,6 +25,8 @@ Released   : 20090411
 {% block body %}
 <body>
 {% endblock %}
+<div id="logo">
+</div>
 <!-- start header -->
   <div id="header">
 	<h1>ReBuS</h1>
@@ -34,17 +36,19 @@ Released   : 20090411
 <!-- start page -->
 <div id="page">
 	<!-- start content -->
+    <!--div id="wrapper"-->
 	<div id="content">
       {% block content %}
       {% endblock %}
     </div>
+    <!--/div-->
 	<!-- end content -->
 
 	<!-- start sidebar -->
 	<div id="sidebar">
 		<ul>
 			<li>
-				<h2>Menu</h2>
+				<!--h2>Menu</h2-->
 				<ul>
                   <li><a href="/">Home</a></li>				  
                   <li><a href="/map">Where are we?</a></li>	
@@ -67,7 +71,7 @@ Released   : 20090411
 </div>
 <!-- end page -->
 <div id="footer">
-	<p>&copy; ReBuS 2011 &nbsp;&bull;&nbsp All Rights Reserved &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a></p>
+	<p>&nbsp;&bull;&nbsp; &copy; ReBuS 2011 &nbsp;&bull;&nbsp All Rights Reserved &nbsp;&bull;&nbsp;</a></p>
 </div>
 </body>
 </html>

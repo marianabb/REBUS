@@ -1,3 +1,5 @@
+import settings
+
 DEBUG = True
 
 DATABASES = {
@@ -44,3 +46,7 @@ STATICFILES_DIRS = (
 TEMPLATE_DIRS = (
     "/Users/mariana/Documents/Work/REBUS/rebus_site/templates/",
 )
+
+INSTALLED_APPS = settings.INSTALLED_APPS + (
+    'django.contrib.staticfiles',
+    )

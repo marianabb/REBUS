@@ -1,2 +1,4 @@
+PIL==1.1.7
 -e hg+https://bitbucket.org/ubernostrum/django-registration@58eef8330b0f23da4645eb01c078621eb3998f39#egg=django_registration-dev
 django-uni-form==0.8.0
+easy-thumbnails==1.0-alpha-18

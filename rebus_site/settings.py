@@ -104,9 +104,8 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'rebus_site.urls'
 
-TEMPLATE_DIRS = (
-    "/Users/mariana/Documents/Work/REBUS/rebus_site/templates/",
-)
+#TEMPLATE_DIRS = ("/Users/mariana/Documents/Work/REBUS/rebus_site/templates/",)
+TEMPLATE_DIRS = (os.path.join(ROOT_PATH, "templates"),)
 
 INSTALLED_APPS = (
     'django.contrib.auth',

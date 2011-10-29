@@ -3,6 +3,9 @@
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+import os
+ROOT_PATH = os.path.abspath(os.path.dirname(__file__))
+
 ADMINS = (
     ('Mariana Bustamante', 'marianabb@gmail.com'),
 )
@@ -44,7 +47,7 @@ USE_L10N = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = '/Users/mariana/Documents/Work/REBUS/rebus_site/media/'
+MEDIA_ROOT = os.path.join(ROOT_PATH, "media")
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -55,12 +58,7 @@ MEDIA_URL = '/media/' #TODO change when appropriate
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-#STATIC_ROOT = ''
-## TODO Changes made for Djangozoom
-import os
-ROOT_PATH = os.path.abspath(os.path.dirname(__file__))
 STATIC_ROOT = os.path.join(ROOT_PATH, "static")
-## end Djangozoom
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -72,9 +70,9 @@ STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Additional locations of static files
-STATICFILES_DIRS = (
-    "/Users/mariana/Documents/Work/REBUS/rebus_site/static/",
-)
+#STATICFILES_DIRS = (
+#    "/Users/mariana/Documents/Work/REBUS/rebus_site/static/",
+#)
 
 # List of finder classes that know how to find static files in
 # various locations.

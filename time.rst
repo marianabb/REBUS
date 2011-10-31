@@ -160,10 +160,18 @@ Sat Sep 3rd
 
 
 
-===========
- Questions:
-===========
-- Server to deploy please.
+=====================
+ Installed on server:
+=====================
+- python-setuptools
+- pip (with easy-install)
+- django-1.3 (with pip)
+- git
+- mercurial
+- gcc
+- python-imaging
+
+
 
 
 

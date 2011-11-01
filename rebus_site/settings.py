@@ -14,11 +14,11 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'marianabb_rebusdb',                      # Or path to database file if using sqlite3.
-        'USER': 'marianabb',                      # Not used with sqlite3.
-        'PASSWORD': 'lavaman0s',                  # Not used with sqlite3.
-        'HOST': 'postgresql.alwaysdata.com',                   # Set to empty string for localhost. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'rebusdb',                      # Or path to database file if using sqlite3.
+        'USER': 'admindb',                      # Not used with sqlite3.
+        'PASSWORD': 'BSAr3bu5DB',                  # Not used with sqlite3.
+        'HOST': '',                   # Set to empty string for localhost. Not used with sqlite3.
     }
 }
 
